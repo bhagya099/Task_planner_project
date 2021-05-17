@@ -49,83 +49,125 @@
                     <label for="date" class="form-label">Due Date</label>
                     <input type="date" class="form-control" id="date" />
                 </div>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option selected>Status</option>
+                  <option value="1">To Do</option>
+                  <option value="2">In Progress</option>
+                  <option value="3">Review</option>
+                  <option value="3">Done</option>
+                </select>
                 <button type="submit" class="btn btn-primary">Add Task</button>
             </form>
-        </div>
-        <div class="row border mb-5">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-          <option selected>Status</option>
-          <option value="1">To Do</option>
-          <option value="2">In Progress</option>
-          <option value="3">Review</option>
-          <option value="3">Done</option>
-        </select>
         </div>
         <!-- displaying task -->
         <div class="row mb-5">
             <!-- first card -->
 
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <ul class="list-group" id="task-list">
+                <li class="card">
+                    <div class="card" style="width: 18rem;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Task Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
+                        <div class="card-body">
+                            <h5 class="card-title">Task Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assign to</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Status</li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success btn-sm">Done</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Assign to</li>
-                        <li class="list-group-item">Due Date</li>
-                        <li class="list-group-item">Status</li>
-                    </ul>
-                    <div class="card-body">
-                        <button type="button" class="btn btn-success btn-sm">Done</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- second card -->
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+                <!-- second card -->
+                <li class="card">
+                    <div class="card" style="width: 18rem;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Task Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
+                        <div class="card-body">
+                            <h5 class="card-title">Task Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assign to</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Status</li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success btn-sm">Done</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Assign to</li>
-                        <li class="list-group-item">Due Date</li>
-                        <li class="list-group-item">Status</li>
-                    </ul>
-                    <div class="card-body">
-                        <button type="button" class="btn btn-success btn-sm">Done</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                    </div>
-                </div>
-            </div>
+                </li>
 
-            <!-- third card-->
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+                <!-- third card-->
+                <li class="card">
+                    <div class="card" style="width: 18rem;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Task Name</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
+                        <div class="card-body">
+                            <h5 class="card-title">Task Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assign to</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Status</li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success btn-sm">Done</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Assign to</li>
-                        <li class="list-group-item">Due Date</li>
-                        <li class="list-group-item">Status</li>
-                    </ul>
-                    <div class="card-body">
-                        <button type="button" class="btn btn-success btn-sm">Done</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </li>
+
+                <!-- fourth card -->
+                <li class="card">
+                    <div class="card" style="width: 18rem;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Task Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assign to</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Status</li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success btn-sm">Done</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+
+                <!-- fifth card -->
+                <li class="card">
+                    <div class="card" style="width: 18rem;">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Task Name</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assign to</li>
+                            <li class="list-group-item">Due Date</li>
+                            <li class="list-group-item">Status</li>
+                        </ul>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success btn-sm">Done</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
