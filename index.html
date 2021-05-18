@@ -33,12 +33,52 @@
         </div>
 
 
+        <!DOCTYPE html>
+        <html lang="en">
+
+
+
+
+
+
+
+
+        <!-- Adding a task form -->
+        <div class="row border mb-5">
+            <h3 class="text-center">Add a task</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Task Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Example: choose wireframe design" />
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Task Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="Using Figma to finalise wireframe" />
+                </div>
+                <div class="mb-3">
+                    <label for="assigned" class="form-label">Assigned To</label>
+                    <input type="text" class="form-control" id="assigned" placeholder="Colette" />
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" id="date" />
+                </div>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Status</option>
+                    <option value="1">To Do</option>
+                    <option value="2">In Progress</option>
+                    <option value="3">Review</option>
+                    <option value="3">Done</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </div>
+
         <!-- displaying task -->
         <div class="row mb-5">
             <!-- first card -->
-            <div class="col">
-                <ul class="list-group">
-                    <li class="card style=" width: 18rem; ">
+            <ul class="list-group">
+                <li class="card style=" width: 18rem; ">
 
                         <div class="card-body ">
                             <h5 class="card-title ">Task Name</h5>
@@ -56,33 +96,29 @@
                             <button type="button " class="btn btn-danger btn-sm ">Delete</button>
                         </div>
                         </li>
-            </div>
             <!-- second card -->
-            <div class="col ">
-                <li class="card style=" width: 18rem; ">
-                        <!-- <div class=" card " style=" width: 18rem; "> -->
-
-                        <div class="card-body ">
-                            <h5 class="card-title ">Task Name</h5>
-                            <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </p>
-                        </div>
-                        <ul class="list-group list-group-flush ">
-                            <li class="list-group-item ">Assign to</li>
-                            <li class="list-group-item ">Due Date</li>
-                            <li class="list-group-item ">Status</li>
-                        </ul>
-                        <div class="card-body ">
-                            <button type="button " class="btn btn-success btn-sm ">Done</button>
-                            <button type="button " class="btn btn-danger btn-sm ">Delete</button>
-                        </div>
-                        <!-- </div> -->
-                    </li>
-            </div>
-            <!-- third card-->
-            <div class="col ">
                 <li class="card style=" width: 18rem; ">
                     <!-- <div class=" card " style=" width: 18rem; "> -->
+
+                    <div class="card-body ">
+                        <h5 class="card-title ">Task Name</h5>
+                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item ">Assign to</li>
+                        <li class="list-group-item ">Due Date</li>
+                        <li class="list-group-item ">Status</li>
+                    </ul>
+                    <div class="card-body ">
+                        <button type="button " class="btn btn-success btn-sm ">Done</button>
+                        <button type="button " class="btn btn-danger btn-sm ">Delete</button>
+                    </div>
+                    <!-- </div> -->
+                </li>
+                <!-- third card-->
+                <li class="card style=" width: 18rem; ">
+
 
                         <div class="card-body ">
                             <h5 class="card-title ">Task Name</h5>
@@ -99,13 +135,12 @@
                             <button type="button " class="btn btn-success btn-sm ">Done</button>
                             <button type="button " class="btn btn-danger btn-sm ">Delete</button>
                         </div>
-                    <!-- </div> -->
+
                     </li>
-            </div>
+
             <!-- fourth card -->
-            <div class="col ">
+
                 <li class="card style=" width: 18rem; ">
-                    <!-- <div class=" card " style=" width: 18rem; "> -->
                     <div class=" card-body ">
                         <h5 class=" card-title ">Task Name</h5>
                         <p class=" card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -122,11 +157,9 @@
                     </div>
                     <!-- </div> -->
                 </li>
-            </div>
-            <!-- fifth card -->
-            <div class="col ">
+                <!-- fifth card -->
                 <li class="card style=" width: 18rem; ">
-                    <!-- <div class=" card " style=" width: 18rem; "> -->
+
 
                         <div class="card-body ">
                             <h5 class="card-title ">Task Name</h5>
@@ -143,9 +176,9 @@
                             <button type="button " class="btn btn-success btn-sm ">Done</button>
                             <button type="button " class="btn btn-danger btn-sm ">Delete</button>
                         </div>
-                    <!-- </div> -->
+
                     </li>
-            </div>
+
             </ul>
         </div>
     </div>
