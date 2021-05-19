@@ -36,7 +36,7 @@
 
 /* Background Image Set up */
 body {
-    background-image: url(/image/coolabstract.png);
+    background-image: url('/image/coolabstract.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
