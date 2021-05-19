@@ -36,7 +36,7 @@
 
 /* Background Image Set up */
 body {
-    background-image: url("/image/coolabstract.jpg") !important;
+    background-image: url("../image/coolabstract.jpg") !important;
     background-color: lightgreen;
     background-repeat: no-repeat;
     background-size: cover;
