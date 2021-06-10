@@ -11,8 +11,12 @@ let errMessage = document.querySelector('#errMsgName');
 showError = () => {
     console.log(nameInput.value.length);
     if (nameInput.value.length <= 5) {
+
         // console.log('Please enter a valid name more than 5 characters');
         errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
+        if (nameInput.value.length >= 5) {
+            errMessage.innerHTML = "";
+        }
 
     }
 
