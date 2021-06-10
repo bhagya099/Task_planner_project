@@ -10,17 +10,15 @@ let errMessage = document.querySelector('#errMsgName');
 //assign input to 
 assignValues = (data) => {
 
-    nameInput.value = data; 
+//create errMessageFunction
+showError = () => {
+    console.log(nameInput.value.length);
+    if (nameInput.value.length <= 5) {
+        // console.log('Please enter a valid name more than 5 characters');
+        errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
 
-    showError = () => {
-    console.log(nameInput);
-    console.log(nameInput.length);
-    
-        if (nameInput.value.length < 5 ) {
-            errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
-            console.log('working');
-        }
     }
+
 }
 
 //create errMessageFunction
@@ -35,4 +33,3 @@ submitButton.addEventListener('click', assignValues);
 // Check if the Task Due Date input value is not empty.
 // Check if the Task Status input value is not empty.
 // Step 3: Showing errors to users
-
