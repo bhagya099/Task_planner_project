@@ -1,9 +1,11 @@
+const NewTask = new TaskManager();
 const nameInput = document.querySelector('#name');
 const assignedInput = document.querySelector('#assigned');
 const dateInput = document.querySelector('#date');
 const statusInput = document.querySelector('#status');
 const description = document.querySelector('#description');
 const submitButton = document.querySelector('#btnSub');
+const displayTask = document.querySelector("#displayTask");
 
 let err1 = false;
 let err2 = false;
@@ -78,7 +80,35 @@ showError = () => {
     console.log(inputsOkay);
 }
 
+// use classes
+NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
+console.log(NewTask);
+// displayTask.innerHTML = `<ul class="list-group">
+//                           <li class="card mb-2" style="width: 100%">
+//                            <div class="card-body">
+//                           <h5 class="card-title">${nameInput.value}</h5>
+// </div>
+// <ul class="list-group list-group-flush">
+//     <li class="list-group-item">${assignedInput.value}</li>
+//     <li class="list-group-item">${dateInput.value}</li>
+//     <li class="list-group-item">${statusInput.value}</li>
+// </ul>
+// <div class="card-body">
+//     <button type="button " class="btn $btn-border-width:0 btn-success btn-sm">
+//      Done
+//      </button>
+//     <button type="button " class="btn btn-danger btn-sm">
+//      Delete
+//    </button>
+// </div>
+//  </li>`
+
+
 //define the new card function
 //use inputsOkay as a condition check for the object push
 
-submitButton.addEventListener('click', showError);  
+// Check if the Task Description input value is more than 5 characters.
+// Check if the Assigned To value is more than 5 characters.
+// Check if the Task Due Date input value is not empty.
+// Check if the Task Status input value is not empty.
+// Step 3: Showing errors to users

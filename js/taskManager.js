@@ -1,23 +1,19 @@
 class TaskManager {
-  constructor(currentId = 0) {
-    this.currentId = currentId;
-    this._tasks = [];
+    constructor(currentId = 0) {
+        this.currentId = currentId;
+        this.tasks = [];
 
-  }
-  addTask(name, description, assignedTo, dueDate, status) {
-    this.currentId++;
-    this.name = name;
-    this.description = description;
-    this.assignedTo = assignedTo;
-    this.dueDate = dueDate;
-    this.status = status;
-    this._tasks.push(this.addTask)
-  }
+    }
+    addTask(name, description, assignedTo, dueDate, status) {
+        const task = {
+            id: this.currentId++,
+            name = name,
+            description = description,
+            assignedTo = assignedTo,
+            dueDate = dueDate,
+            status = status,
+        };
+        this.tasks.push({ task });
+    }
+
 }
-
-
-
-
-
-// if noErr = true submit form
-// if noErr = false submit.preventDefault()
