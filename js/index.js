@@ -1,54 +1,84 @@
-const task1 = new TaskManager();
-gi
-// Validate Task Name, Description, AssignedTo, DueDate, Status. Values need to be more than 5 characters.
-//Declare Variables
-const nameInput = document.querySelector("#name");
-const assignedInput = document.querySelector("#assigned");
-const dateInput = document.querySelector("#date");
-const statusInput = document.querySelector("#status");
-const description = document.querySelector("#description");
-const submitButton = document.querySelector("#btnSub");
+const nameInput = document.querySelector('#name');
+const assignedInput = document.querySelector('#assigned');
+const dateInput = document.querySelector('#date');
+const statusInput = document.querySelector('#status');
+const description = document.querySelector('#description');
+const submitButton = document.querySelector('#btnSub');
+
+let err1 = false;
+let err2 = false;
+let err3 = false;
+let err4 = false;
+let err5 = false;
+
+let inputsOkay = false;
 
 //create errMessageFunction
 showError = () => {
-  let errMessageName = document.querySelector("#errMsgName");
-  let errMessageAssign = document.querySelector("#errMsgAssign");
-  let errMessageDate = document.querySelector("#errMsgDate");
-  let errMessageDes = document.querySelector("#errMsgDes");
-  // input valid name
-  if (nameInput.value.length <= 5) {
-    errMessageName.innerHTML =
-      "Please enter a valid name more than 5 characters";
-  } else {
-    errMessageName.innerHTML = "";
-  }
-  // input valid assign
-  if (assignedInput.value.length <= 5) {
-    errMessageAssign.innerHTML =
-      "Please enter a valid name more than 5 characters";
-  } else {
-    errMessageAssign.innerHTML = "";
-  }
-  // input valid date
-  if (dateInput.value) {
-    errMessageDate.innerHTML = "";
-  } else {
-    errMessageDate.innerHTML = "Please Select the date";
-  }
-  // input valid description
-  if (description.value.length <= 5) {
-    errMessageDes.innerHTML =
-      "Please enter a valid name more than 5 characters";
-  } else {
-    errMessageDes.innerHTML = "";
-  }
-};
-submitButton.addEventListener("click", showError);
+    let errMessageName = document.querySelector('#errMsgName');
+    let errMessageAssign = document.querySelector('#errMsgAssign');
+    let errMessageDate = document.querySelector('#errMsgDate');
+    let errMessageDes = document.querySelector('#errMsgDes');
+    let errMessageStatus = document.querySelector('#errMsgSelect');
 
-// Check if the Task Name input value is more than 5 characters.
+    
+    // input valid name
+    if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
+        errMessageName.innerHTML = '*Please enter a valid name more than 5 characters';
+        nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err1 = true;
+    } else if (nameInput.value.length === 0) {
+        nameInput.placeholder = '*Please enter a valid name more than 5 characters';
+        // nameInput.placeholder.setAttribute('style', 'color: #EC3A0E !important;');
+        nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err1 = true;
+    } else {
+        errMessageName.innerHTML = "";
+        nameInput.setAttribute('style', 'border: none !important;');
+        err1 = false;
+    }
+    // input valid assign
+    if (assignedInput.value.length <= 5) {
+        errMessageAssign.innerHTML = '*Please enter a task name  more than 5 characters';
+        err2 = true;
+    } else {
+        errMessageAssign.innerHTML = "";
+        err2 = false;
+    }
+    // input valid description
+    if (description.value.length <= 5) {
+        errMessageDes.innerHTML = '*Please add a description';
+        err3 = true;
+    } else {
+        errMessageDes.innerHTML = "";
+        err3 = false;
+    }
+    // select the date
+    if (dateInput.value) {
+        errMessageDate.innerHTML = "";
+        err4 = false;
+    } else {
+        errMessageDate.innerHTML = '*Please select the date';
+        err4 = true;
+    }
+    // status
+    if (statusInput.value >= 1) {
+        statusInput.setAttribute('style', 'border: none !important;');
+        err5 = false;
+    } else {
+        statusInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err5 = true;
+    }
+    if (err1 || err2 || err3 || err4 || err5) {
+        inputsOkay = false;
+    } else {
+        inputsOkay = true;
+    }
+    //call new card function
+    console.log(inputsOkay);
+}
 
-// Check if the Task Description input value is more than 5 characters.
-// Check if the Assigned To value is more than 5 characters.
-// Check if the Task Due Date input value is not empty.
-// Check if the Task Status input value is not empty.
-// Step 3: Showing errors to users
+//define the new card function
+//use inputsOkay as a condition check for the object push
+
+submitButton.addEventListener('click', showError);  
