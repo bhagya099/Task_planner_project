@@ -8,7 +8,6 @@ const description = document.querySelector('#description');
 const submitButton = document.querySelector('#btnSub');
 
 
-
 //create errMessageFunction
 showError = () => {
     let errMessageName = document.querySelector('#errMsgName');
@@ -52,6 +51,8 @@ showError = () => {
 
 
 }
+
+//create errMessageFunction
 
 submitButton.addEventListener('click', showError);
 
