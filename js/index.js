@@ -11,7 +11,7 @@ const submitButton = document.querySelector("#btnSub");
 showError = () => {
   let errMessageName = document.querySelector("#errMsgName");
   let errMessageAssign = document.querySelector("#errMsgAssign");
-  // let errMessageDate = document.querySelector("#errMsgDate");
+  let errMessageDate = document.querySelector("#errMsgDate");
   let errMessageDes = document.querySelector("#errMsgDes");
   // input valid name
   if (nameInput.value.length <= 5) {
@@ -26,6 +26,12 @@ showError = () => {
       "Please enter a valid name more than 5 characters";
   } else {
     errMessageAssign.innerHTML = "";
+  }
+  // input valid date
+  if (dateInput.value) {
+    errMessageDate.innerHTML = "";
+  } else {
+    errMessageDate.innerHTML = "Please Select the date";
   }
   // input valid description
   if (description.value.length <= 5) {
