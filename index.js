@@ -46,3 +46,4 @@ submitButton.addEventListener('click', showError);
 // Check if the Task Due Date input value is not empty.
 // Check if the Task Status input value is not empty.
 // Step 3: Showing errors to users
+
