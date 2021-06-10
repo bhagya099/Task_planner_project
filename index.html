@@ -35,33 +35,32 @@
             <h3 class=" text-center ">Add A Task</h3>
             <form>
                 <div class="mb-3 ">
-                    <input aria-label="Task Name" type="text" class="form-control " id="name" placeholder="Task Name" />
-                    <span id="errMsgName"></span>
+                    <input aria-label="Task Name" type="text" class="form-control" id="name" placeholder="Task Name" />
+                    <span id="errMsgName" style="color: red;"></span>
                 </div>
                 <div class="mb-3 ">
-                    <input type="text" class="form-control" id="assigned" placeholder="Assigned To" />
-                    <span id="errMsgAssign"></span>
+                    <input type="text " class="form-control " id="assigned" placeholder="Assigned To" />
+                    <span id="errMsgAssign" style="color: red;"></span>
                 </div>
                 <div class="row" id="smallrow">
                     <div class="col-6">
-                        <input type="date" class="form-control" id="date" placeholder="Due Date" />
-                        <span id="errMsgDate"></span>
+                        <input type="date" class="form-control " id="date" placeholder="Due Date" />
+                        <span id="errMsgDate" style=" color: red;"></span>
                     </div>
                     <div class="col-6">
                         <select id="status" class="form-select" aria-label="dropdown status selection">
-                            <option selected>Status</option>
-                            <option value="1">To Do</option>
-                            <option value="2">In Progress</option>
-                            <option value="3">Review</option>
-                            <option value="3">Done</option>
+                            <option value="1 ">To Do</option>
+                            <option value="2 ">In Progress</option>
+                            <option value="3 ">Review</option>
+                            <option value="3 ">Done</option>
                         </select>
-                        <span id="errMsgSelect"></span>
+                        <span id="errMsgSelect" style="color: red;"></span>
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 ">
                     <input type="text" class="form-control" id="description" placeholder="Task Description" />
+                    <span id="errMsgDes" style="color: red;"></span>
                 </div>
-                <span id="errMsgDes"></span>
                 <button id="btnSub" type="button" class="btn btn-primary">Add Task</button>
             </form>
         </div>
