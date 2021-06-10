@@ -24,11 +24,11 @@ showError = () => {
     
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
-        errMessageName.innerHTML = '*Please enter a valid name more than 5 characters';
+        errMessageName.innerHTML = '*Please enter a name more than 5 characters';
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else if (nameInput.value.length === 0) {
-        nameInput.placeholder = '*Please enter a valid name more than 5 characters';
+        nameInput.placeholder = '*Please enter a valid name';
         // nameInput.placeholder.setAttribute('style', 'color: #EC3A0E !important;');
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
