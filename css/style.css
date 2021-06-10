@@ -66,6 +66,17 @@ body {
     width: 60px;
 }
 
+/* 'Add Task button */
+#btnSub {
+    background-color: #027DE9;
+    border: none !important;
+    height: 40px;
+    width: 85px;
+    margin-right: 5px;
+    color: white;
+    border-radius: 40px !important;
+}
+
 /* 'Add a Task' visuals */
 #collapseform {
     background-color: #FFFFFF90 !important;
