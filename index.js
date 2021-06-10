@@ -7,20 +7,6 @@ const statusInput = document.querySelector('#status');
 const submitButton = document.querySelector('#btnSub');
 let errMessage = document.querySelector('#errMsgName');
 
-//assign input to 
-assignValues = (data) => {
-
-//create errMessageFunction
-showError = () => {
-    console.log(nameInput.value.length);
-    if (nameInput.value.length <= 5) {
-        // console.log('Please enter a valid name more than 5 characters');
-        errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
-
-    }
-
-}
-
 //create errMessageFunction
 
 submitButton.addEventListener('click', assignValues);
