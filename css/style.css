@@ -36,7 +36,7 @@
 
 /* Background Image Set up */
 body {
-    background-image: url("../image/coolabstract.jpg") !important;
+    background-image: url("../images/coolabstract.jpg");
     background-color: lightgreen;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +65,6 @@ body {
     height: 40px;
     width: 60px;
 }
-
 
 /* 'Add a Task' visuals */
 #collapseform {
