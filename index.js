@@ -4,23 +4,35 @@ const nameInput = document.querySelector('#name');
 const assignedInput = document.querySelector('#assigned');
 const dateInput = document.querySelector('#date');
 const statusInput = document.querySelector('#status');
+const description = document.querySelector('#description');
 const submitButton = document.querySelector('#btnSub');
-let errMessage = document.querySelector('#errMsgName');
+
 
 
 //create errMessageFunction
 showError = () => {
-    console.log(nameInput.value.length);
+    let errMessageName = document.querySelector('#errMsgName');
+    let errMessageAssign = document.querySelector('#errMsgAssign');
+    let errMessageDate = document.querySelector('#errMsgDate');
+    let errMessageDes = document.querySelector('#errMsgDes');
+    // input valid name
     if (nameInput.value.length <= 5) {
-
-        // console.log('Please enter a valid name more than 5 characters');
-        errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
-        if (nameInput.value.length >= 5) {
-            errMessage.innerHTML = "";
-        }
-
+        errMessageName.innerHTML = 'Please enter a valid name more than 5 characters';
+    } else {
+        errMessage.innerHTML = "";
     }
-
+    // input valid assign
+    if (assignedInput.value.length <= 5) {
+        errMessageAssign.innerHTML = 'Please enter a  valid name  more than 5 characters';
+    } else {
+        errMessage.innerHTML = "";
+    }
+    // input valid description
+    if (description.value.length <= 5) {
+        errMessageDes.innerHTML = 'Please enter a  valid name  more than 5 characters';
+    } else {
+        errMessage.innerHTML = "";
+    }
 }
 
 submitButton.addEventListener('click', showError);
