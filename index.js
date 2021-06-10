@@ -18,19 +18,19 @@ showError = () => {
     if (nameInput.value.length <= 5) {
         errMessageName.innerHTML = 'Please enter a valid name more than 5 characters';
     } else {
-        errMessage.innerHTML = "";
+        errMessageName.innerHTML = "";
     }
     // input valid assign
     if (assignedInput.value.length <= 5) {
         errMessageAssign.innerHTML = 'Please enter a  valid name  more than 5 characters';
     } else {
-        errMessage.innerHTML = "";
+        errMessageAssign.innerHTML = "";
     }
     // input valid description
     if (description.value.length <= 5) {
         errMessageDes.innerHTML = 'Please enter a  valid name  more than 5 characters';
     } else {
-        errMessage.innerHTML = "";
+        errMessageDes.innerHTML = "";
     }
 }
 

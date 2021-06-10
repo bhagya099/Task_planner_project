@@ -101,4 +101,5 @@
  
  .card {
      border-radius: 40px !important;
+     border: 0px !important;
  }
