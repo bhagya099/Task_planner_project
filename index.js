@@ -8,8 +8,19 @@ const submitButton = document.querySelector('#btnSub');
 let errMessage = document.querySelector('#errMsgName');
 
 //create errMessageFunction
+showError = () => {
+    console.log(nameInput.value.length);
+    if (nameInput.value.length <= 5) {
+        // console.log('Please enter a valid name more than 5 characters');
+        errMessage.innerHTML = 'Please enter a valid name more than 5 characters';
 
-submitButton.addEventListener('click', assignValues);
+    }
+
+}
+
+//create errMessageFunction
+
+submitButton.addEventListener('click', showError);
 
 
 // Check if the Task Name input value is more than 5 characters.
