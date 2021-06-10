@@ -15,24 +15,42 @@ showError = () => {
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
+    let errMessageStatus = document.querySelector('#errMsgSelect');
     // input valid name
     if (nameInput.value.length <= 5) {
         errMessageName.innerHTML = 'Please enter a valid name more than 5 characters';
     } else {
-        errMessage.innerHTML = "";
+        errMessageName.innerHTML = "";
     }
     // input valid assign
     if (assignedInput.value.length <= 5) {
         errMessageAssign.innerHTML = 'Please enter a  valid name  more than 5 characters';
     } else {
-        errMessage.innerHTML = "";
+        errMessageAssign.innerHTML = "";
     }
     // input valid description
     if (description.value.length <= 5) {
-        errMessageDes.innerHTML = 'Please enter a  valid name  more than 5 characters';
+        errMessageDes.innerHTML = 'Please add more description';
     } else {
-        errMessage.innerHTML = "";
+        errMessageDes.innerHTML = "";
     }
+    // select the date
+    if (dateInput.value) {
+        errMessageDate.innerHTML = "";
+
+    } else {
+        errMessageDate.innerHTML = 'Please Select the date';
+    }
+
+    // status
+    if (statusInput.value) {
+        errMessageStatus.innerHTML = "";
+
+    } else {
+        errMessageStatus.innerHTML = 'Please Select the staus';
+    }
+
+
 }
 
 submitButton.addEventListener('click', showError);
