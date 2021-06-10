@@ -1,3 +1,5 @@
+const task1 = new TaskManager();
+gi
 // Validate Task Name, Description, AssignedTo, DueDate, Status. Values need to be more than 5 characters.
 //Declare Variables
 const nameInput = document.querySelector("#name");
@@ -50,7 +52,3 @@ submitButton.addEventListener("click", showError);
 // Check if the Task Due Date input value is not empty.
 // Check if the Task Status input value is not empty.
 // Step 3: Showing errors to users
-
-const task1 = new TaskManager();
-task1.addTask("colette", "shopping", "colette", "19/06/2021", "done"  )
-console.log(task1);
