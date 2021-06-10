@@ -38,7 +38,7 @@ showError = () => {
         errMessageDate.innerHTML = "";
 
     } else {
-        errMessageDate.innerHTML = 'Please Select the date';
+        errMessageDate.innerHTML = 'Please select the date';
     }
 
     // status
@@ -46,7 +46,7 @@ showError = () => {
         errMessageStatus.innerHTML = "";
 
     } else {
-        errMessageStatus.innerHTML = 'Please Select the staus';
+        errMessageStatus.innerHTML = 'Please select a status';
     }
 
 
