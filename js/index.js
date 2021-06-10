@@ -52,4 +52,5 @@ submitButton.addEventListener("click", showError);
 // Step 3: Showing errors to users
 
 const task1 = new TaskManager();
+task1.addTask("colette", "shopping", "colette", "19/06/2021", "done"  )
 console.log(task1);
