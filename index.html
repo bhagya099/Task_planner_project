@@ -35,14 +35,16 @@
             <form>
                 <div class="mb-3 ">
                     <input aria-label="Task Name" type="text " class="form-control " id="name " placeholder="Task Name" />
+                    <span id="errMsgName"></span>
                 </div>
-                
                 <div class="mb-3 ">
                     <input type="text " class="form-control " id="assigned " placeholder="Assigned To" />
+                    <span id="errMsgAssign"></span>
                 </div>
                 <div class="row" id="smallrow">
                     <div class="col-6">
-                        <input type="date " class="form-control " id="date " placeholder="Due Date"/>
+                        <input type="date " class="form-control " id="date " placeholder="Due Date" />
+                        <span id="errMsgDate"></span>
                     </div>
                     <div class="col-6">
                         <select class="form-select" aria-label="dropdown status selection">
@@ -52,6 +54,7 @@
                             <option value="3 ">Review</option>
                             <option value="3 ">Done</option>
                         </select>
+                        <span id="errMsgSelect"></span>
                     </div>
                 </div>
                 <div class="mb-3 ">
