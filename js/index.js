@@ -94,10 +94,12 @@ showError = () => {
     if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
         console.log(NewTask);
-        const taskHtml = createTaskHtml(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
+        NewTask.render();
+        // const taskHtml = createTaskHtml(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
 
-        console.log(taskHtml);
+        // console.log(taskHtml);
         formReset();
+
     }
 
 }
