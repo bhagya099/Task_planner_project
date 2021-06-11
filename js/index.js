@@ -24,13 +24,13 @@ showError = () => {
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
 
-    // input valid name
+    // input valid task name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
-        errMessageName.innerHTML = '*Please enter a name more than 5 characters';
+        errMessageName.innerHTML = '*Please enter a task name more than 5 characters';
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else if (nameInput.value.length === 0) {
-        nameInput.placeholder = '*Please enter a valid name';
+        nameInput.placeholder = '*Please enter a task name';
         // nameInput.placeholder.setAttribute('style', 'color: #EC3A0E !important;');
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
@@ -40,12 +40,12 @@ showError = () => {
         err1 = false;
     }
     // input valid assign
-    if (assignedInput.value.length <= 5) {
-        errMessageAssign.innerHTML = '*Please enter a task name  more than 5 characters';
+    if (assignedInput.value.length <= 5 && assignedInput.value.length > 0) {
+        errMessageAssign.innerHTML = '*Please enter a name  more than 5 characters';
         assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else if (assignedInput.value.length === 0) {
-        errMessageAssign.innerHTML = '*Please enter a task name';
+        assignedInput.placeholder = '*Please assign a name';
         assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else {
@@ -56,17 +56,21 @@ showError = () => {
     // input valid description
     if (description.value.length <= 5) {
         errMessageDes.innerHTML = '*Please add a description';
+        description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err3 = true;
     } else {
         errMessageDes.innerHTML = "";
+        description.setAttribute('style', 'border: none !important;');
         err3 = false;
     }
     // select the date
     if (dateInput.value) {
         errMessageDate.innerHTML = "";
+        dateInput.setAttribute('style', 'border: none !important;');
         err4 = false;
     } else {
         errMessageDate.innerHTML = '*Please select the date';
+        dateInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err4 = true;
     }
     // status
@@ -90,8 +94,6 @@ showError = () => {
         dateInput.value = "";
         statusInput.value = "Status"
     }
-
-
 
     // use classes
     if (inputsOkay) {
