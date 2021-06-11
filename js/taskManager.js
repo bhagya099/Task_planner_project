@@ -51,7 +51,7 @@ class TaskManager {
 
             const date = new Date(renderTask.task.dueDate);
 
-            // change the date formate
+            // change the date format
             const formattedDate =
                 date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
@@ -62,5 +62,5 @@ class TaskManager {
         const taskList = document.querySelector("#displayTask");
         taskList.innerHTML = taskHtml;
     }
-
 }
+
