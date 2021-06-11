@@ -25,13 +25,6 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
     return html;
 };
 
-
-
-
-
-
-
-
 class TaskManager {
     constructor(currentId = 0) {
         this.currentId = currentId;
@@ -55,11 +48,12 @@ class TaskManager {
         const tasksHtmlList = [];
         for (let i = 0; i < this.tasks.length; i++) {
             const renderTask = this.tasks[i];
+
             const date = new Date(renderTask.dueDate);
             // change the date format
             const formattedDate =
                 date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-            const taskHtml = createTaskHtml(renderTask.name, renderTask.description, renderTask.assignedTo, formattedDate, renderTask.status);
+            const taskHtml = createTaskHtml(renderTask.task.name, renderTask.task.description, renderTask.task.assignedTo, renderTask.task.date, renderTask.task.status);
             tasksHtmlList.push(taskHtml);
         }
         const taskHtml = tasksHtmlList.join("\n");
