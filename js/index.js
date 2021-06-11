@@ -84,20 +84,23 @@ showError = () => {
     }
     // For clear the field
     const formReset = () => {
-        nameInput.value = "";
-        description.value = "";
-        assignedInput.value = "";
-        dateInput.value = "";
-        statusInput.value = "Status"
-    }
-
-
-
-    // use classes
+            nameInput.value = "";
+            description.value = "";
+            assignedInput.value = "";
+            dateInput.value = "";
+            statusInput.value = "Status"
+        }
+        // use classes
     if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
         console.log(NewTask);
+        NewTask.render();
+        // const taskHtml = createTaskHtml(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
+
+        // console.log(taskHtml);
         formReset();
+
     }
+
 }
 submitButton.addEventListener('click', showError);
