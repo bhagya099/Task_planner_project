@@ -31,7 +31,7 @@ checkFormInput = (event) => {
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else if (nameInput.value.length === 0) {
-        nameInput.placeholder = '*Please enter a valid name';
+        nameInput.placeholder = '*Please enter a task name';
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else {
@@ -60,11 +60,11 @@ checkFormInput = (event) => {
         errMessageDes.innerHTML = '*Please add a description more than 5 characters';
         description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err3 = true;
-    } else if (description.value.length == 0){
+    } else if (description.value.length == 0) {
         description.placeholder = '*Please add a description more than 5 characters';
         description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err3 = true;
-    }else {
+    } else {
         errMessageDes.innerHTML = "";
         description.setAttribute('style', 'border: none !important;');
         err3 = false;
@@ -104,4 +104,3 @@ checkFormInput = (event) => {
 }
 
 submitButton.addEventListener('click', checkFormInput);
-
