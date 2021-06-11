@@ -1,4 +1,3 @@
-//This is the Lisa2 version
 const NewTask = new TaskManager();
 
 const nameInput = document.querySelector("#name");
@@ -13,7 +12,6 @@ let err1 = false;
 let err2 = false;
 let err3 = false;
 let err4 = false;
-let err5 = false;
 
 let inputsOkay = false;
 
@@ -33,7 +31,6 @@ checkFormInput = () => {
         err1 = true;
     } else if (nameInput.value.length === 0) {
         nameInput.placeholder = '*Please enter a task name';
-        // nameInput.placeholder.setAttribute('style', 'color: #EC3A0E !important;');
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else {
@@ -41,6 +38,7 @@ checkFormInput = () => {
         nameInput.setAttribute('style', 'border: none !important;');
         err1 = false;
     }
+
     // input valid assign
     if (assignedInput.value.length <= 5 && assignedInput.value.length > 0) {
         errMessageAssign.innerHTML = '*Please enter a name  more than 5 characters';
@@ -55,6 +53,7 @@ checkFormInput = () => {
         assignedInput.setAttribute('style', 'border: none !important;');
         err2 = false;
     }
+
     // input valid description
     if (description.value.length <= 5) {
         errMessageDes.innerHTML = '*Please add a description';
@@ -65,6 +64,7 @@ checkFormInput = () => {
         description.setAttribute('style', 'border: none !important;');
         err3 = false;
     }
+
     // select the date
     if (dateInput.value) {
         errMessageDate.innerHTML = "";
@@ -92,15 +92,10 @@ checkFormInput = () => {
         // use classes
     if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
-        console.log(NewTask);
         NewTask.render();
-        // const taskHtml = createTaskHtml(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
 
-        // console.log(taskHtml);
         formReset();
-
     }
-
 }
 
 submitButton.addEventListener('click', checkFormInput);
