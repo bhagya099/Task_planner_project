@@ -18,11 +18,13 @@ let err5 = false;
 let inputsOkay = false;
 
 //create errMessageFunction
-showError = () => {
-  let errMessageName = document.querySelector("#errMsgName");
-  let errMessageAssign = document.querySelector("#errMsgAssign");
-  let errMessageDate = document.querySelector("#errMsgDate");
-  let errMessageDes = document.querySelector("#errMsgDes");
+
+checkFormInput = () => {
+    let errMessageName = document.querySelector('#errMsgName');
+    let errMessageAssign = document.querySelector('#errMsgAssign');
+    let errMessageDate = document.querySelector('#errMsgDate');
+    let errMessageDes = document.querySelector('#errMsgDes');
+
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
@@ -69,15 +71,8 @@ showError = () => {
         errMessageDate.innerHTML = '*Please select the date';
         err4 = true;
     }
-    // status
-    if (statusInput.value >= 1) {
-        statusInput.setAttribute('style', 'border: none !important;');
-        err5 = false;
-    } else {
-        statusInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
-        err5 = true;
-    }
-    if (err1 || err2 || err3 || err4 || err5) {
+
+    if (err1 || err2 || err3 || err4) {
         inputsOkay = false;
     } else {
         inputsOkay = true;
@@ -88,7 +83,7 @@ showError = () => {
             description.value = "";
             assignedInput.value = "";
             dateInput.value = "";
-            statusInput.value = "Status"
+            statusInput.value = "To Do";
         }
         // use classes
     if (inputsOkay) {
@@ -103,4 +98,6 @@ showError = () => {
     }
 
 }
-submitButton.addEventListener('click', showError);
+
+submitButton.addEventListener('click', checkFormInput);
+
