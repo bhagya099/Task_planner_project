@@ -1,5 +1,5 @@
-const task1 = new TaskManager();
-gi
+// const NewTask = new TaskManager();
+
 // Validate Task Name, Description, AssignedTo, DueDate, Status. Values need to be more than 5 characters.
 //Declare Variables
 const nameInput = document.querySelector("#name");
@@ -15,6 +15,7 @@ showError = () => {
   let errMessageAssign = document.querySelector("#errMsgAssign");
   let errMessageDate = document.querySelector("#errMsgDate");
   let errMessageDes = document.querySelector("#errMsgDes");
+  let errMessageStatus = document.querySelector("#errMsgSelect");
   // input valid name
   if (nameInput.value.length <= 5) {
     errMessageName.innerHTML =
@@ -41,6 +42,12 @@ showError = () => {
       "Please enter a valid name more than 5 characters";
   } else {
     errMessageDes.innerHTML = "";
+  }
+  // status
+  if (statusInput.value) {
+    errMessageStatus = "";
+  } else {
+    errMessageStatus.innerHTML = "Please select a status";
   }
 };
 submitButton.addEventListener("click", showError);
