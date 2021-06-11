@@ -1,3 +1,4 @@
+//This is the Lisa2 version
 const NewTask = new TaskManager();
 
 const nameInput = document.querySelector('#name');
@@ -41,9 +42,15 @@ showError = () => {
     // input valid assign
     if (assignedInput.value.length <= 5) {
         errMessageAssign.innerHTML = '*Please enter a task name  more than 5 characters';
+        assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err2 = true;
+    } else if (assignedInput.value.length === 0) {
+        errMessageAssign.innerHTML = '*Please enter a task name';
+        assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else {
         errMessageAssign.innerHTML = "";
+        assignedInput.setAttribute('style', 'border: none !important;');
         err2 = false;
     }
     // input valid description
