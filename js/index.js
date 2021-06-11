@@ -18,11 +18,13 @@ let err4 = false;
 let inputsOkay = false;
 
 //create errMessageFunction
+
 checkFormInput = () => {
     let errMessageName = document.querySelector('#errMsgName');
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
+
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
@@ -94,4 +96,6 @@ checkFormInput = () => {
     }
 
 }
+
 submitButton.addEventListener('click', checkFormInput);
+
