@@ -36,7 +36,7 @@
 
 /* Background Image Set up */
 body {
-    background-image: url('https://github.com/bhagya099/Task_planner_project/blob/main/image/coolabstract.png');
+    background-image: url('../images/coolabstract.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
