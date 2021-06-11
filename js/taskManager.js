@@ -1,3 +1,37 @@
+// create html
+const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+    const html = `
+    <ul class="list-group">
+        <li class="card mb-2" style="width: 100%">
+            <div class="card-body">
+               <h5 class="card-title">${name}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                  <li class="list-group-item">${assignedTo}</li>
+                  <li class="list-group-item">${dueDate}</li>
+                  <li class="list-group-item">${status}</li>
+                  <li class="list-group-item">${description}</li>
+            </ul>
+            <div class="card-body">
+                <button type="button " class="btn $btn-border-width:0     btn-success btn-sm">
+                 Done
+                </button>
+                <button type="button " class="btn btn-danger btn-sm">
+                   Delete
+                </button>
+            </div>
+        </li>
+    </ul>`;
+    return html;
+};
+
+
+
+
+
+
+
+
 class TaskManager {
     constructor(currentId = 0) {
         this.currentId = currentId;
@@ -16,4 +50,4 @@ class TaskManager {
         this.tasks.push({ task });
     }
 
-}
+};
