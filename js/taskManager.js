@@ -49,21 +49,16 @@ class TaskManager {
 
       const date = new Date(renderTask.task.dueDate);
 
-      // change the date formate
-      const formattedDate =
-        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            // change the date format
+            const formattedDate =
+                date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
-      const taskHtml = createTaskHtml(
-        renderTask.task.name,
-        renderTask.task.description,
-        renderTask.task.assignedTo,
-        formattedDate,
-        renderTask.task.status
-      );
-      tasksHtmlList.push(taskHtml);
+            const taskHtml = createTaskHtml(renderTask.task.name, renderTask.task.description, renderTask.task.assignedTo, formattedDate, renderTask.task.status);
+            tasksHtmlList.push(taskHtml);
+        }
+        const taskHtml = tasksHtmlList.join("\n");
+        const taskList = document.querySelector("#displayTask");
+        taskList.innerHTML = taskHtml;
     }
-    const taskHtml = tasksHtmlList.join("\n");
-    const taskList = document.querySelector("#displayTask");
-    taskList.innerHTML = taskHtml;
-  }
 }
+
