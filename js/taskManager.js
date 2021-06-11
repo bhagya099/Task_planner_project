@@ -7,11 +7,11 @@ class TaskManager {
     addTask(name, description, assignedTo, dueDate, status) {
         const task = {
             id: this.currentId++,
-            name = name,
-            description = description,
-            assignedTo = assignedTo,
-            dueDate = dueDate,
-            status = status,
+            name: name,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status,
         };
         this.tasks.push({ task });
     }
