@@ -1,4 +1,3 @@
-//This is the Lisa2 version
 const NewTask = new TaskManager();
 
 const nameInput = document.querySelector("#name");
@@ -14,26 +13,25 @@ let err2 = false;
 let err3 = false;
 let err4 = false;
 
-
 let inputsOkay = false;
 
 //create errMessageFunction
 
-checkFormInput = () => {
+checkFormInput = (event) => {
     let errMessageName = document.querySelector('#errMsgName');
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
 
+    event.preventDefault();
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
-        errMessageName.innerHTML = '*Please enter a name more than 5 characters';
+        errMessageName.innerHTML = '*Please enter a task name more than 5 characters';
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else if (nameInput.value.length === 0) {
         nameInput.placeholder = '*Please enter a valid name';
-
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else {
@@ -41,13 +39,14 @@ checkFormInput = () => {
         nameInput.setAttribute('style', 'border: none !important;');
         err1 = false;
     }
+
     // input valid assign
-    if (assignedInput.value.length <= 5) {
-        errMessageAssign.innerHTML = '*Please enter a task name  more than 5 characters';
+    if (assignedInput.value.length <= 5 && assignedInput.value.length > 0) {
+        errMessageAssign.innerHTML = '*Please enter a name  more than 5 characters';
         assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else if (assignedInput.value.length === 0) {
-        errMessageAssign.innerHTML = '*Please enter a task name';
+        assignedInput.placeholder = '*Please assign a name';
         assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else {
@@ -55,20 +54,30 @@ checkFormInput = () => {
         assignedInput.setAttribute('style', 'border: none !important;');
         err2 = false;
     }
+
     // input valid description
-    if (description.value.length <= 5) {
-        errMessageDes.innerHTML = '*Please add a description';
+    if (description.value.length <= 5 && description.value.length > 0) {
+        errMessageDes.innerHTML = '*Please add a description more than 5 characters';
+        description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err3 = true;
-    } else {
+    } else if (description.value.length == 0){
+        description.placeholder = '*Please add a description more than 5 characters';
+        description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err3 = true;
+    }else {
         errMessageDes.innerHTML = "";
+        description.setAttribute('style', 'border: none !important;');
         err3 = false;
     }
+
     // select the date
     if (dateInput.value) {
         errMessageDate.innerHTML = "";
+        dateInput.setAttribute('style', 'border: none !important;');
         err4 = false;
     } else {
         errMessageDate.innerHTML = '*Please select the date';
+        dateInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err4 = true;
     }
 
@@ -88,13 +97,10 @@ checkFormInput = () => {
         // use classes
     if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
-
         NewTask.render();
 
         formReset();
-
     }
-
 }
 
 submitButton.addEventListener('click', checkFormInput);
