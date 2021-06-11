@@ -18,19 +18,13 @@ let err5 = false;
 let inputsOkay = false;
 
 //create errMessageFunction
-<<<<<<< HEAD
+
 checkFormInput = () => {
     let errMessageName = document.querySelector('#errMsgName');
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
-=======
-showError = () => {
-  let errMessageName = document.querySelector("#errMsgName");
-  let errMessageAssign = document.querySelector("#errMsgAssign");
-  let errMessageDate = document.querySelector("#errMsgDate");
-  let errMessageDes = document.querySelector("#errMsgDes");
->>>>>>> b8341a6fdb090143d479e1c5a6b002498b0303e3
+
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
@@ -104,8 +98,6 @@ showError = () => {
     }
 
 }
-<<<<<<< HEAD
+
 submitButton.addEventListener('click', checkFormInput);
-=======
-submitButton.addEventListener('click', showError);
->>>>>>> b8341a6fdb090143d479e1c5a6b002498b0303e3
+
