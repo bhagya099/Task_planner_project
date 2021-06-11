@@ -8,13 +8,7 @@ const description = document.querySelector('#description');
 const submitButton = document.querySelector('#btnSub');
 const displayTask = document.querySelector("#displayTask");
 
-let err1 = false;
-let err2 = false;
-let err3 = false;
-let err4 = false;
-let err5 = false;
-
-let inputsOkay = false;
+let inputsError = 0;
 
 //create errMessageFunction
 showError = () => {
