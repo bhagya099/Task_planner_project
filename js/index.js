@@ -1,12 +1,12 @@
 //This is the Lisa2 version
 const NewTask = new TaskManager();
 
-const nameInput = document.querySelector('#name');
-const assignedInput = document.querySelector('#assigned');
-const dateInput = document.querySelector('#date');
-const statusInput = document.querySelector('#status');
-const description = document.querySelector('#description');
-const submitButton = document.querySelector('#btnSub');
+const nameInput = document.querySelector("#name");
+const assignedInput = document.querySelector("#assigned");
+const dateInput = document.querySelector("#date");
+const statusInput = document.querySelector("#status");
+const description = document.querySelector("#description");
+const submitButton = document.querySelector("#btnSub");
 const displayTask = document.querySelector("#displayTask");
 
 let err1 = false;
@@ -19,10 +19,10 @@ let inputsOkay = false;
 
 //create errMessageFunction
 showError = () => {
-    let errMessageName = document.querySelector('#errMsgName');
-    let errMessageAssign = document.querySelector('#errMsgAssign');
-    let errMessageDate = document.querySelector('#errMsgDate');
-    let errMessageDes = document.querySelector('#errMsgDes');
+  let errMessageName = document.querySelector("#errMsgName");
+  let errMessageAssign = document.querySelector("#errMsgAssign");
+  let errMessageDate = document.querySelector("#errMsgDate");
+  let errMessageDes = document.querySelector("#errMsgDes");
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
