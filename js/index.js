@@ -1,4 +1,4 @@
-//This is the latest version
+//This is the Lisa version
 const NewTask = new TaskManager();
 
 const nameInput = document.querySelector('#name');
