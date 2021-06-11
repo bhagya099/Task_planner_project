@@ -13,7 +13,7 @@ let err1 = false;
 let err2 = false;
 let err3 = false;
 let err4 = false;
-let err5 = false;
+
 
 let inputsOkay = false;
 
@@ -31,7 +31,7 @@ checkFormInput = () => {
         err1 = true;
     } else if (nameInput.value.length === 0) {
         nameInput.placeholder = '*Please enter a valid name';
-        // nameInput.placeholder.setAttribute('style', 'color: #EC3A0E !important;');
+
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else {
@@ -86,11 +86,9 @@ checkFormInput = () => {
         // use classes
     if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
-        console.log(NewTask);
-        NewTask.render();
-        // const taskHtml = createTaskHtml(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
 
-        // console.log(taskHtml);
+        NewTask.render();
+
         formReset();
 
     }
