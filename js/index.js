@@ -1,4 +1,5 @@
 const NewTask = new TaskManager();
+
 const nameInput = document.querySelector('#name');
 const assignedInput = document.querySelector('#assigned');
 const dateInput = document.querySelector('#date');
