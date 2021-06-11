@@ -30,7 +30,7 @@ checkFormInput = () => {
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else if (nameInput.value.length === 0) {
-        nameInput.placeholder = '*Please enter a task name';
+        nameInput.placeholder = '*Please enter a valid name';
         nameInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err1 = true;
     } else {
