@@ -73,8 +73,10 @@ showError = () => {
     }
     if (err1 || err2 || err3 || err4 || err5) {
         inputsOkay = false;
+        console.log("There is Error");
     } else {
         inputsOkay = true;
+        console.log("There is No Error");
     }
     //call new card function
     console.log(inputsOkay);
