@@ -82,11 +82,22 @@ showError = () => {
     } else {
         inputsOkay = true;
     }
+    // For clear the field
+    const formReset = () => {
+        nameInput.value = "";
+        description.value = "";
+        assignedInput.value = "";
+        dateInput.value = "";
+        statusInput.value = "Status"
+    }
+
+
 
     // use classes
-    if (inputsOkay) { 
+    if (inputsOkay) {
         NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
         console.log(NewTask);
+        formReset();
     }
 }
 submitButton.addEventListener('click', showError);
