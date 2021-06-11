@@ -1,4 +1,6 @@
+//This is the Lisa2 version
 const NewTask = new TaskManager();
+
 const nameInput = document.querySelector('#name');
 const assignedInput = document.querySelector('#assigned');
 const dateInput = document.querySelector('#date');
@@ -21,8 +23,6 @@ showError = () => {
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
-    let errMessageStatus = document.querySelector('#errMsgSelect');
-
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
@@ -42,9 +42,15 @@ showError = () => {
     // input valid assign
     if (assignedInput.value.length <= 5) {
         errMessageAssign.innerHTML = '*Please enter a task name  more than 5 characters';
+        assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err2 = true;
+    } else if (assignedInput.value.length === 0) {
+        errMessageAssign.innerHTML = '*Please enter a task name';
+        assignedInput.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err2 = true;
     } else {
         errMessageAssign.innerHTML = "";
+        assignedInput.setAttribute('style', 'border: none !important;');
         err2 = false;
     }
     // input valid description
@@ -73,68 +79,14 @@ showError = () => {
     }
     if (err1 || err2 || err3 || err4 || err5) {
         inputsOkay = false;
-        console.log("There is Error");
     } else {
         inputsOkay = true;
-        console.log("There is No Error");
-    }
-    //call new card function
-    console.log(inputsOkay);
-
-
-    // use classes
-    // NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
-    // console.log(NewTask);
-    // displayTask.innerHTML = `<ul class="list-group">
-    //                           <li class="card mb-2" style="width: 100%">
-    //                            <div class="card-body">
-    //                           <h5 class="card-title">${nameInput.value}</h5>
-    // </div>
-    // <ul class="list-group list-group-flush">
-    //     <li class="list-group-item">${assignedInput.value}</li>
-    //     <li class="list-group-item">${dateInput.value}</li>
-    //     <li class="list-group-item">${statusInput.value}</li>
-    // </ul>
-    // <div class="card-body">
-    //     <button type="button " class="btn $btn-border-width:0 btn-success btn-sm">
-    //      Done
-    //      </button>
-    //     <button type="button " class="btn btn-danger btn-sm">
-    //      Delete
-    //    </button>
-    // </div>
-    //  </li>`
-
-
-    // use classes
-    NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
-    console.log(NewTask);
-
-    for (i in NewTask.tasks) {
-
-        displayTask.innerHTML =
-            `<ul class="list-group">
-            <li class="card mb-2" style="width: 100%">
-                 <div class="card-body">
-                    <h5 class="card-title">${NewTask.tasks[i].task.name}</h5>
-                </div>
-                   <ul class="list-group list-group-flush">
-                     <li class="list-group-item">${NewTask.tasks[i].task.description}</li>
-                    <li class="list-group-item">${NewTask.tasks[i].task.assignedTo}</li>
-                      <li class="list-group-item">${NewTask.tasks[i].task.dueDate}</li>
-                      <li class="list-group-item">${NewTask.tasks[i].task.status}</li>
-                   </ul>
-            <div class="card-body">
-              <button type="button " class="btn $btn-border-width:0 btn-success btn-sm">
-              Done
-             </button>
-            <button type="button " class="btn btn-danger btn-sm">
-             Delete
-           </button>
-        </div>
-       </li></ul>`
-
     }
 
+    // use classes
+    if (inputsOkay) { 
+        NewTask.addTask(nameInput.value, description.value, assignedInput.value, dateInput.value, statusInput.value);
+        console.log(NewTask);
+    }
 }
 submitButton.addEventListener('click', showError);
