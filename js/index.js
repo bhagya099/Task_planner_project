@@ -17,12 +17,13 @@ let inputsOkay = false;
 
 //create errMessageFunction
 
-checkFormInput = () => {
+checkFormInput = (event) => {
     let errMessageName = document.querySelector('#errMsgName');
     let errMessageAssign = document.querySelector('#errMsgAssign');
     let errMessageDate = document.querySelector('#errMsgDate');
     let errMessageDes = document.querySelector('#errMsgDes');
 
+    event.preventDefault();
 
     // input valid name
     if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
@@ -55,11 +56,15 @@ checkFormInput = () => {
     }
 
     // input valid description
-    if (description.value.length <= 5) {
-        errMessageDes.innerHTML = '*Please add a description';
+    if (description.value.length <= 5 && description.value.length > 0) {
+        errMessageDes.innerHTML = '*Please add a description more than 5 characters';
         description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
         err3 = true;
-    } else {
+    } else if (description.value.length == 0){
+        description.placeholder = '*Please add a description more than 5 characters';
+        description.setAttribute('style', 'border: #EC3A0E solid 3px !important;');
+        err3 = true;
+    }else {
         errMessageDes.innerHTML = "";
         description.setAttribute('style', 'border: none !important;');
         err3 = false;

@@ -62,6 +62,5 @@ class TaskManager {
         const taskList = document.querySelector("#displayTask");
         taskList.innerHTML = taskHtml;
     }
-
 }
 
