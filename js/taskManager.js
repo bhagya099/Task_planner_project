@@ -1,6 +1,6 @@
 // create html
 const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
-    const html = `
+  const html = `
     <ul class="list-group">
         <li class="card mb-2" style="width: 100%">
             <div class="card-body">
@@ -22,45 +22,48 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
             </div>
         </li>
     </ul>`;
-    return html;
+  return html;
 };
 
 class TaskManager {
-    constructor(currentId = 0) {
-        this.currentId = currentId;
-        this.tasks = [];
+  constructor(currentId = 0) {
+    this.currentId = currentId;
+    this.tasks = [];
+  }
+  addTask(name, description, assignedTo, dueDate, status) {
+    const task = {
+      id: this.currentId++,
+      name: name,
+      description: description,
+      assignedTo: assignedTo,
+      dueDate: dueDate,
+      status: status,
+    };
+    this.tasks.push({ task });
+  }
 
+  render() {
+    const tasksHtmlList = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const renderTask = this.tasks[i];
+
+      const date = new Date(renderTask.task.dueDate);
+
+      // change the date formate
+      const formattedDate =
+        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
+      const taskHtml = createTaskHtml(
+        renderTask.task.name,
+        renderTask.task.description,
+        renderTask.task.assignedTo,
+        formattedDate,
+        renderTask.task.status
+      );
+      tasksHtmlList.push(taskHtml);
     }
-    addTask(name, description, assignedTo, dueDate, status) {
-        const task = {
-            id: this.currentId++,
-            name: name,
-            description: description,
-            assignedTo: assignedTo,
-            dueDate: dueDate,
-            status: status,
-        };
-        this.tasks.push({ task });
-
-    }
-
-    render() {
-        const tasksHtmlList = [];
-        for (let i = 0; i < this.tasks.length; i++) {
-            const renderTask = this.tasks[i];
-
-            const date = new Date(renderTask.task.dueDate);
-
-            // change the date formate
-            const formattedDate =
-                date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-
-            const taskHtml = createTaskHtml(renderTask.task.name, renderTask.task.description, renderTask.task.assignedTo, formattedDate, renderTask.task.status);
-            tasksHtmlList.push(taskHtml);
-        }
-        const taskHtml = tasksHtmlList.join("\n");
-        const taskList = document.querySelector("#displayTask");
-        taskList.innerHTML = taskHtml;
-    }
-
+    const taskHtml = tasksHtmlList.join("\n");
+    const taskList = document.querySelector("#displayTask");
+    taskList.innerHTML = taskHtml;
+  }
 }
