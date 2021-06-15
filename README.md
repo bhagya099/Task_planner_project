@@ -9,9 +9,8 @@ Before pushing, please:
 6. pull request from your Github branch to GitHub main branch
 
 Bonus Features we want:
-> colour schemes selectable
-> collapsing task form once submitted
-> tasks are displayed in order of due date
-> tasks are visible on a calendar
-> tasks have a priority button that will !important them to the top of the display order
-> 
+> colour schemes selectable <br>
+> collapsing task form once submitted <br>
+> tasks are displayed in order of due date <br>
+> tasks are visible on a calendar <br>
+> tasks have a priority button that will !important them to the top of the display order <br>
