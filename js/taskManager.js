@@ -9,7 +9,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             <ul class="list-group list-group-flush">
                   <li class="list-group-item">${assignedTo}</li>
                   <li class="list-group-item">${dueDate}</li>
-                  <li class="list-group-item">${status}</li>
+                  <li id="htmlStatus" class="list-group-item">${status}</li>
                   <li class="list-group-item">${description}</li>
             </ul>
             <div class="card-body">
@@ -62,6 +62,14 @@ class TaskManager {
         renderTask.task.status
       );
       tasksHtmlList.push(taskHtml);
+      console.log(renderTask.task.status);
+    // changing status colour
+        if (renderTask.task.status == 'In Progress') {
+            document.querySelector("#htmlStatus").style.color = 'orange';
+        }
+        // if (renderTask.task.status == 'Done') {
+        //     document.querySelector("#htmlStatus").setAttribute("style", "color: green;");
+        // }
     }
 
     const taskHtml = tasksHtmlList.join("\n");
