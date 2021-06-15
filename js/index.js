@@ -118,10 +118,21 @@ checkFormInput = (event) => {
   }
 };
 
+//the event listener for clicking on 'done' button on a task
 displayTask.addEventListener("click", (event) => {
+    
   if (event.target.classList.contains("done-button")) {
-    console.log(event.target.parentElement.parentElement.parentElement);
+    //find the main parent element of the 'done' button
+    let parentTask = event.target.parentElement.parentElement.parentElement;
+    console.log(parentTask);
+    let taskId = Number(parentTask.dataset.idNumber);
+    const task = NewTask.getTaskById(taskId);
+    task.task.status = 'Done';
+    NewTask.render();
   }
+//   if (task.task.status = 'Done') {
+
+//   }
 });
 
 submitButton.addEventListener("click", checkFormInput);
