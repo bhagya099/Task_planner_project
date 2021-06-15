@@ -8,6 +8,7 @@ const description = document.querySelector("#description");
 const submitButton = document.querySelector("#btnSub");
 const displayTask = document.querySelector("#displayTask");
 
+
 let err1 = false;
 let err2 = false;
 let err3 = false;
@@ -124,15 +125,13 @@ displayTask.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     //find the main parent element of the 'done' button
     let parentTask = event.target.parentElement.parentElement.parentElement;
-    console.log(parentTask);
     let taskId = Number(parentTask.dataset.idNumber);
     const task = NewTask.getTaskById(taskId);
     task.task.status = 'Done';
     NewTask.render();
   }
-//   if (task.task.status = 'Done') {
-
-//   }
+  
 });
+
 
 submitButton.addEventListener("click", checkFormInput);
