@@ -1,7 +1,7 @@
 // create html
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   const html = `
-    <ul class="list-group">
+    <ul class="list-group" data-task-id="${id}">
         <li class="card mb-2" style="width: 100%">
             <div class="card-body">
                <h5 class="card-title">${name}</h5>
@@ -13,7 +13,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
                   <li class="list-group-item">${description}</li>
             </ul>
             <div class="card-body">
-                <button type="button " class="btn $btn-border-width:0     btn-success btn-sm">
+                <button type="button " class="btn $btn-border-width:0 btn-success btn-sm done-button">
                  Done
                 </button>
                 <button type="button " class="btn btn-danger btn-sm">
@@ -49,16 +49,34 @@ class TaskManager {
 
       const date = new Date(renderTask.task.dueDate);
 
-            // change the date format
-            const formattedDate =
-                date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      // change the date format
+      const formattedDate =
+        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
-            const taskHtml = createTaskHtml(renderTask.task.name, renderTask.task.description, renderTask.task.assignedTo, formattedDate, renderTask.task.status);
-            tasksHtmlList.push(taskHtml);
-        }
-        const taskHtml = tasksHtmlList.join("\n");
-        const taskList = document.querySelector("#displayTask");
-        taskList.innerHTML = taskHtml;
+      const taskHtml = createTaskHtml(
+        renderTask.task.id,
+        renderTask.task.name,
+        renderTask.task.description,
+        renderTask.task.assignedTo,
+        formattedDate,
+        renderTask.task.status
+      );
+      tasksHtmlList.push(taskHtml);
     }
-}
 
+    const taskHtml = tasksHtmlList.join("\n");
+    const taskList = document.querySelector("#displayTask");
+    taskList.innerHTML = taskHtml;
+  }
+
+  getTaskById(taskId) {
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+      let getTask = this.tasks[i];
+      if (getTask.task.id === taskId) {
+        foundTask = getTask;
+      }
+    }
+    return foundTask;
+  }
+}

@@ -103,5 +103,11 @@ checkFormInput = (event) => {
     }
 }
 
+displayTask.addEventListener('click', (event)=> {
+    if(event.target.classList.contains('done-button')) {
+        console.log(event.target.parentElement.parentElement.parentElement);
+    }
+})
+
 submitButton.addEventListener('click', checkFormInput);
 
