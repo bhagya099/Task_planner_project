@@ -135,7 +135,7 @@ displayTask.addEventListener("click", (event) => {
         NewTask.render();
         let button = document.querySelector('.done-button');
         console.log(button);
-        button.display = 'none';
+        event.target.style.display = 'none';
     }
 
 });

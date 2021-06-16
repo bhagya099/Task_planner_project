@@ -13,7 +13,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                   <li class="list-group-item">${description}</li>
             </ul>
             <div class="card-body">
-                <button type="button " class="btn $btn-border-width:0 btn-success btn-sm done-button">
+                <button type="button " class="btn $btn-border-width:0 btn-success btn-sm done-button ${status.toLowerCase() == 'done' ? 'd-none' : ''}">
                  Done
                 </button>
                 <button type="button " class="btn btn-danger btn-sm">
@@ -62,14 +62,7 @@ class TaskManager {
                 renderTask.task.status
             );
             tasksHtmlList.unshift(taskHtml);
-            console.log(renderTask.task.status);
-            // changing status colour
-            if (renderTask.task.status == 'In Progress') {
-                document.querySelector("#htmlStatus").style.color = 'orange';
-            }
-            // if (renderTask.task.status == 'Done') {
-            //     document.querySelector("#htmlStatus").setAttribute("style", "color: green;");
-            // }
+
         }
 
         const taskHtml = tasksHtmlList.join("\n");
