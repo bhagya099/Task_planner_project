@@ -5,103 +5,105 @@
 }
 
 /* Header visuals */
-#headercard {
-    margin: 0;
-    padding: 0;
-}
-
-#header {
-    margin: 0;
-    padding: 0;
-    border: none !important;
-}
-
-#whiteheader {
-    height: 130px;
-    text-transform: uppercase !important;
-    font-size: 3rem;
-}
-
-#ultrabutton {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
-    font-weight: 900;
-    background-color: #027de9;
-    border: none;
-    border-radius: 40px;
-    margin: 20px;
-}
-
-
-
-/* Background Image Set up */
-body {
-    background-image: url('../images/coolabstract.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* formating ALL buttons */
-.btn {
-    border-radius: 40px !important;
-}
-
-/* 'done' buttons */
-.btn-success {
-    background-color: #86ce64 !important;
-    border: none !important;
-    height: 40px;
-    width: 60px;
-    margin-right: 5px;
-}
-
-/* 'delete' buttons */
-.btn-danger {
-    border: none !important;
-    background-color: rgb(236, 58, 14) !important;
-    height: 40px;
-    width: 60px;
-}
-
-
-/* 'Add a Task' visuals */
-#collapseform {
-    background-color: #FFFFFF90 !important;
-    border-radius: 40px;
-    padding: 20px !important;
-    border: none;
-}
-
-input {
-    border-radius: 40px !important;
-    
-    border: none !important;
-}
-
-.form-select {
-    border-radius: 40px !important;
-}
-
-#smallrow {
-    margin-bottom: 15px;
-}
-
-#description {
-    height: 150px;
-    border: purple solid 1px;
-}
-
-form {
-    padding: 0 !important;
-}
-
-.btn-primary {
-    background-color: #027de9 !important;
-    border: none !important;
-}
-
-/* card visuals */
-.card {
-    border-radius: 40px !important;
-}
+ 
+ #headercard {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #header {
+     margin: 0;
+     padding: 0;
+     border: none !important;
+ }
+ 
+ #whiteheader {
+     height: 130px;
+     text-transform: uppercase !important;
+     font-size: 3rem;
+ }
+ 
+ #ultrabutton {
+     width: 60px;
+     height: 60px;
+     font-size: 2rem;
+     font-weight: 900;
+     background-color: #027de9;
+     border: none;
+     margin: 20px;
+     border-radius: 40px;
+ }
+ /* Background Image Set up */
+ 
+ body {
+     background-image: url('../images/coolabstract.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ /* formating ALL buttons */
+ 
+ .btn {
+     border-radius: 40px !important;
+ }
+ /* 'done' buttons */
+ 
+ .btn-success {
+     background-color: #86ce64 !important;
+     border: none !important;
+     height: 40px;
+     width: 60px;
+     margin-right: 5px;
+ }
+ /* 'delete' buttons */
+ 
+ .btn-danger {
+     border: none !important;
+     background-color: rgb(236, 58, 14) !important;
+     height: 40px;
+     width: 60px;
+ }
+ /* 'Add a Task' visuals */
+ 
+ #collapseform {
+     background-color: #FFFFFF90 !important;
+     border-radius: 40px;
+     padding: 20px !important;
+     border: none;
+ }
+ 
+ input,
+ textarea {
+     border-radius: 40px !important;
+     border: none !important;
+ }
+ 
+ .form-select {
+     border-radius: 40px !important;
+ }
+ 
+ #smallrow {
+     margin-bottom: 15px;
+ }
+ 
+ #description {
+     height: 150px;
+     border: purple solid 1px;
+ }
+ 
+ #description::placeholder {
+     padding-top: 50px;
+ }
+ 
+ form {
+     padding: 0 !important;
+ }
+ 
+ .btn-primary {
+     background-color: #027de9 !important;
+     border: none !important;
+ }
+ /* card visuals */
+ 
+ .card {
+     border-radius: 40px !important;
+ }

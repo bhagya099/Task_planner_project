@@ -1,6 +1,6 @@
 // create html
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
-  const html = `
+    const html = `
     <ul class="list-group" data-id-number="${id}">
         <li class="card mb-2" style="width: 100%">
             <div class="card-body">
@@ -22,69 +22,69 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             </div>
         </li>
     </ul>`;
-  return html;
+    return html;
 };
 
 class TaskManager {
-  constructor(currentId = 0) {
-    this.currentId = currentId;
-    this.tasks = [];
-  }
-  addTask(name, description, assignedTo, dueDate, status) {
-    const task = {
-      id: this.currentId++,
-      name: name,
-      description: description,
-      assignedTo: assignedTo,
-      dueDate: dueDate,
-      status: status,
-    };
-    this.tasks.push({ task });
-  }WEFAWRRF
+    constructor(currentId = 0) {
+        this.currentId = currentId;
+        this.tasks = [];
+    }
+    addTask(name, description, assignedTo, dueDate, status) {
+        const task = {
+            id: this.currentId++,
+            name: name,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status,
+        };
+        this.tasks.push({ task });
+    }
 
-  render() {
-    const tasksHtmlList = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const renderTask = this.tasks[i];
+    render() {
+        const tasksHtmlList = [];
+        for (let i = 0; i < this.tasks.length; i++) {
+            const renderTask = this.tasks[i];
 
-      const date = new Date(renderTask.task.dueDate);
+            const date = new Date(renderTask.task.dueDate);
 
-      // change the date format
-      const formattedDate =
-        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            // change the date format
+            const formattedDate =
+                date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
-      const taskHtml = createTaskHtml(
-        renderTask.task.id,
-        renderTask.task.name,
-        renderTask.task.description,
-        renderTask.task.assignedTo,
-        formattedDate,
-        renderTask.task.status
-      );
-      tasksHtmlList.push(taskHtml);
-      console.log(renderTask.task.status);
-    // changing status colour
-        if (renderTask.task.status == 'In Progress') {
-            document.querySelector("#htmlStatus").style.color = 'orange';
+            const taskHtml = createTaskHtml(
+                renderTask.task.id,
+                renderTask.task.name,
+                renderTask.task.description,
+                renderTask.task.assignedTo,
+                formattedDate,
+                renderTask.task.status
+            );
+            tasksHtmlList.unshift(taskHtml);
+            console.log(renderTask.task.status);
+            // changing status colour
+            if (renderTask.task.status == 'In Progress') {
+                document.querySelector("#htmlStatus").style.color = 'orange';
+            }
+            // if (renderTask.task.status == 'Done') {
+            //     document.querySelector("#htmlStatus").setAttribute("style", "color: green;");
+            // }
         }
-        // if (renderTask.task.status == 'Done') {
-        //     document.querySelector("#htmlStatus").setAttribute("style", "color: green;");
-        // }
+
+        const taskHtml = tasksHtmlList.join("\n");
+        const taskList = document.querySelector("#displayTask");
+        taskList.innerHTML = taskHtml;
     }
 
-    const taskHtml = tasksHtmlList.join("\n");
-    const taskList = document.querySelector("#displayTask");
-    taskList.innerHTML = taskHtml;
-  }
-
-  getTaskById(taskId) {
-    let foundTask;
-    for (let i = 0; i < this.tasks.length; i++) {
-      let getTask = this.tasks[i];
-      if (getTask.task.id === taskId) {
-        foundTask = getTask;
-      }
+    getTaskById(taskId) {
+        let foundTask;
+        for (let i = 0; i < this.tasks.length; i++) {
+            let getTask = this.tasks[i];
+            if (getTask.task.id === taskId) {
+                foundTask = getTask;
+            }
+        }
+        return foundTask;
     }
-    return foundTask;
-  }
 }
