@@ -133,9 +133,6 @@ displayTask.addEventListener("click", (event) => {
         const task = NewTask.getTaskById(taskId);
         task.task.status = 'Done';
         NewTask.render();
-        let button = document.querySelector('.done-button');
-        console.log(button);
-        event.target.style.display = 'none';
     }
 
 });
