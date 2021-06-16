@@ -27,7 +27,7 @@ checkFormInput = (event) => {
     event.preventDefault();
 
     // input valid name
-    if (nameInput.value <= 5 && nameInput.value.length > 0) {
+    if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
         errMessageName.innerHTML =
             "*Please enter a task name more than 5 characters";
         nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
@@ -43,7 +43,7 @@ checkFormInput = (event) => {
     }
 
     // input valid assign
-    if (assignedInput.value <= 5 && assignedInput.value.length > 0) {
+    if (assignedInput.value.length <= 5 && assignedInput.value.length > 0) {
         errMessageAssign.innerHTML = "*Please enter a name  more than 5 characters";
         assignedInput.setAttribute(
             "style",
@@ -64,7 +64,7 @@ checkFormInput = (event) => {
     }
 
     // input valid description
-    if (description.value <= 5 && description.value.length > 0) {
+    if (description.value.length <= 5 && description.value.length > 0) {
         errMessageDes.innerHTML =
             "*Please add a description more than 5 characters";
         description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
@@ -107,11 +107,11 @@ checkFormInput = (event) => {
     // use classes
     if (inputsOkay) {
         NewTask.addTask(
-            nameInput.value,
-            description.value,
-            assignedInput.value,
+            nameInput.value.trim(),
+            description.value.trim(),
+            assignedInput.value.trim(),
             dateInput.value,
-            statusInput.value
+            statusInput.value.trim()
         );
         NewTask.render();
 
