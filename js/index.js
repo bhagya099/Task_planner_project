@@ -27,7 +27,7 @@ checkFormInput = (event) => {
     event.preventDefault();
 
     // input valid name
-    if (nameInput.value <= 5 && nameInput.value.length > 0) {
+    if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
         errMessageName.innerHTML =
             "*Please enter a task name more than 5 characters";
         nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
