@@ -27,7 +27,9 @@ checkFormInput = (event) => {
     event.preventDefault();
 
     // input valid name
-    if (nameInput.value.length <= 5 && nameInput.value.length > 0) {
+    let nameInputValue = nameInput.value.trim();
+
+    if (nameInputValue.length <= 5 && nameInputValue.length == "") {
         errMessageName.innerHTML =
             "*Please enter a task name more than 5 characters";
         nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
@@ -43,7 +45,8 @@ checkFormInput = (event) => {
     }
 
     // input valid assign
-    if (assignedInput.value.length <= 5 && assignedInput.value.length > 0) {
+    let assignedInputValue = assignedInput.value.trim();
+    if (assignedInputValue.length <= 5 && assignedInputValue.length == "") {
         errMessageAssign.innerHTML = "*Please enter a name  more than 5 characters";
         assignedInput.setAttribute(
             "style",
@@ -64,7 +67,8 @@ checkFormInput = (event) => {
     }
 
     // input valid description
-    if (description.value.length <= 5 && description.value.length > 0) {
+    let descriptionValue = description.value.trim();
+    if (descriptionValue.length <= 5 && descriptionValue.length == "") {
         errMessageDes.innerHTML =
             "*Please add a description more than 5 characters";
         description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
@@ -107,11 +111,11 @@ checkFormInput = (event) => {
     // use classes
     if (inputsOkay) {
         NewTask.addTask(
-            nameInput.value.trim(),
-            description.value.trim(),
-            assignedInput.value.trim(),
+            nameInput.value,
+            description.value,
+            assignedInput.value,
             dateInput.value,
-            statusInput.value.trim()
+            statusInput.value
         );
         NewTask.render();
 
@@ -129,7 +133,9 @@ displayTask.addEventListener("click", (event) => {
         const task = NewTask.getTaskById(taskId);
         task.task.status = 'Done';
         NewTask.render();
-
+        let button = document.querySelector('.done-button');
+        console.log(button);
+        button.display = 'none';
     }
 
 });
