@@ -1,5 +1,9 @@
 const NewTask = new TaskManager();
 
+NewTask.load();
+
+NewTask.render();
+
 const nameInput = document.querySelector("#name");
 const assignedInput = document.querySelector("#assigned");
 const dateInput = document.querySelector("#date");
@@ -118,11 +122,12 @@ checkFormInput = (event) => {
             statusInput.value
         );
         NewTask.render();
-
+        NewTask.save();
         formReset();
+
     }
 };
-
+submitButton.addEventListener("click", checkFormInput);
 //the event listener for clicking on 'done' button on a task
 displayTask.addEventListener("click", (event) => {
 
@@ -136,6 +141,3 @@ displayTask.addEventListener("click", (event) => {
     }
 
 });
-
-
-submitButton.addEventListener("click", checkFormInput);
