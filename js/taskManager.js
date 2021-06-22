@@ -1,7 +1,14 @@
 // create html
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+    // let statusElement = document.getElementById('status');
+    // let statusColor = statusElement.value;
+    // console.log(status);
+    // console.log(statusColor);
+    // // if(${status} =='Done'){
+    // //     ${status}.style.color = 'green !important';
+    // // }
     const html = `
-    <ul class="card-wrapping list-group col" data-id-number="${id}">
+   <ul class="card-wrapping d-flex list-group col" data-id-number="${id}">
         <li class="card mb-2" style="width: 100%">
             <div class="card-body">
                <h5 class="card-title">${name}</h5>
@@ -9,7 +16,12 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             <ul class="list-group list-group-flush">
                   <li class="list-group-item">${assignedTo}</li>
                   <li class="list-group-item">${dueDate}</li>
-                  <li class="list-group-item">${status}</li>
+                  <li class="list-group-item
+                    ${status == 'Done' ? 'done' : ''}
+                    ${status == 'To Do' ? 'to-do' : ''}
+                    ${status == 'In Progress' ? 'in-progress' : ''}
+                    ${status == 'Review' ? 'review' : ''}
+                    ">${status}</li>
                   <li class="list-group-item">${description}</li>
             </ul>
             <div class="card-body">
