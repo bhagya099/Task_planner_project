@@ -133,6 +133,15 @@ checkFormInput = (event) => {
     }
 };
 
+function toggle() {
+    const form = document.getElementById("collapseform");
+    if (form.style.display === "none") {
+      form.style.display = "block";
+    } else {
+      form.style.display = "none";
+    }
+  }
+
 //Submit Form Event Listener
 submitButton.addEventListener("click", checkFormInput);
 

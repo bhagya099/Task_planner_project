@@ -4,26 +4,27 @@
     box-sizing: border-box;
 }
 
+
 /* Header visuals */
- 
- #headercard {
+
+#headercard {
     margin: 0;
     padding: 0;
- }
- 
- #header {
+}
+
+#header {
     margin: 0;
     padding: 0;
     border: none !important;
- }
- 
- #whiteheader {
+}
+
+#whiteheader {
     height: 130px;
     text-transform: uppercase !important;
     font-size: 3rem;
- }
- 
- #ultrabutton {
+}
+
+#ultrabutton {
     width: 60px;
     height: 60px;
     font-size: 2rem;
@@ -32,93 +33,132 @@
     border: none;
     margin: 20px;
     border-radius: 40px;
- }
- /* Background Image Set up */
- 
- body {
+}
+
+
+/* Background Image Set up */
+
+body {
     background-image: url('../images/coolabstract.png');
     background-repeat: no-repeat;
     background-size: cover;
- }
- /* formating ALL buttons */
- 
- .btn {
+}
+
+
+/* formating ALL buttons */
+
+.btn {
     border-radius: 40px !important;
- }
- /* 'done' buttons */
- 
- .btn-success {
+}
+
+
+/* 'done' buttons */
+
+.btn-success {
     background-color: #86ce64 !important;
     border: none !important;
     height: 40px;
     width: 60px;
     margin-right: 5px;
- }
- /* 'delete' buttons */
- 
- .btn-danger {
+}
+
+
+/* 'delete' buttons */
+
+.btn-danger {
     border: none !important;
     background-color: rgb(236, 58, 14) !important;
     height: 40px;
     width: 60px;
- }
- /* 'Add a Task' visuals */
- 
- #collapseform {
+}
+
+
+/* 'Add a Task' visuals */
+
+#collapseform {
     background-color: #FFFFFF90 !important;
     border-radius: 40px;
     padding: 20px !important;
     border: none;
- }
- 
- input {
+}
+
+input {
     border-radius: 40px !important;
     border: none !important;
- }
- 
- .form-select {
+}
+
+.form-select {
     border-radius: 40px !important;
     border: none !important;
- }
- 
- #smallrow {
+}
+
+#smallrow {
     margin-bottom: 15px;
- }
- 
- #description {
+}
+
+#description {
     height: 150px;
     border: none;
     border-radius: 20px !important;
- }
- 
- #description::placeholder {
+}
+
+#description::placeholder {
     padding-top: 0px;
- }
- 
- form {
+}
+
+form {
     padding: 0 !important;
- }
- 
- .btn-primary {
+}
+
+.btn-primary {
     background-color: #027de9 !important;
     border: none !important;
- }
- /* card visuals */
- 
- .card {
+}
+
+
+/* card visuals */
+
+.card {
+    min-width: 300px !important;
+    max-width: 300px !important;
     border-radius: 40px !important;
     border: none !important;
- }
+}
 
- .card-wrapping {
-    min-width: 300px;
+.card-wrapping {
+    min-width: 300px !important;
     max-width: 300px !important;
-    /* margin: auto; */
- }
+    margin: 5px 10px !important;
+}
 
- /* Card column */ 
-@media only screen and (max-width: 700px){
+
+
+/* colour Status */
+.done {
+    color: white !important;
+    background: url('../images/done.png');
+}
+
+.in-progress {
+    color: white !important;
+    background-image: url('../images/in-progress.png');
+}
+
+.review {
+    color: white !important;
+    background-image: url('../images/review.png');
+}
+
+.to-do {
+    color: white !important;
+    background-image: url('../images/to-do-2.png');
+}
+
+
+/* Card column */
+
+@media only screen and (max-width: 700px) {
     #displayTask {
-    justify-content: center;
+        justify-content: center;
     }
 }
