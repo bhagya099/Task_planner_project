@@ -39,27 +39,27 @@ class TaskManager {
             dueDate: dueDate,
             status: status,
         };
-        this.tasks.push({ task });
+        this.tasks.push(task);
     }
 
+    //the method to render 
     render() {
         const tasksHtmlList = [];
         for (let i = 0; i < this.tasks.length; i++) {
             const renderTask = this.tasks[i];
-
-            const date = new Date(renderTask.task.dueDate);
+            const date = new Date(renderTask.dueDate);
 
             // change the date format
             const formattedDate =
                 date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 
             const taskHtml = createTaskHtml(
-                renderTask.task.id,
-                renderTask.task.name,
-                renderTask.task.description,
-                renderTask.task.assignedTo,
+                renderTask.id,
+                renderTask.name,
+                renderTask.description,
+                renderTask.assignedTo,
                 formattedDate,
-                renderTask.task.status
+                renderTask.status
             );
             tasksHtmlList.unshift(taskHtml);
 
@@ -70,11 +70,12 @@ class TaskManager {
         taskList.innerHTML = taskHtml;
     }
 
+    //this method finds the id
     getTaskById(taskId) {
             let foundTask;
             for (let i = 0; i < this.tasks.length; i++) {
                 let getTask = this.tasks[i];
-                if (getTask.task.id === taskId) {
+                if (getTask.id === taskId) {
                     foundTask = getTask;
                 }
             }
@@ -84,7 +85,7 @@ class TaskManager {
     //delete method
     deleteTask(taskId) {
         const newTasks = [];
-        for(let i=0; i < newTasks.length; i++) {
+        for(let i=0; i < this.tasks.length; i++) {
             const task = this.tasks[i];
             if(task.id !== taskId) {
                 newTasks.push(task);
@@ -95,9 +96,7 @@ class TaskManager {
         //   For local storage
     save() {
         // create a json stringfy 
-        console.log(this.tasks);
         const taskJson = JSON.stringify(this.tasks);
-        console.log(taskJson.task);
         // store json in local Storage
         localStorage.setItem('task', taskJson);
         // convert id into string
@@ -105,8 +104,10 @@ class TaskManager {
         // store Id in localstorage
         localStorage.setItem('currentId', currentId);
     }
+    //This method loads the saved data
     load() {
         if (localStorage.getItem('task')) {
+            //to get the task from local storage
             const taskJson = localStorage.getItem('task');
             this.tasks = JSON.parse(taskJson);
 
