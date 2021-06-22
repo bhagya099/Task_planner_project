@@ -1,4 +1,4 @@
- /* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -71,14 +71,14 @@
      border: none;
  }
  
- input,
- textarea {
+ input {
      border-radius: 40px !important;
      border: none !important;
  }
  
  .form-select {
      border-radius: 40px !important;
+     border: none !important;
  }
  
  #smallrow {
@@ -87,11 +87,12 @@
  
  #description {
      height: 150px;
-     border: purple solid 1px;
+     border: none;
+     border-radius: 20px !important;
  }
  
  #description::placeholder {
-     padding-top: 50px;
+     padding-top: 0px;
  }
  
  form {
