@@ -27,10 +27,9 @@
             list-group-item
             d-flex
             justify-content-between
-            align-items-center" 
-                id="whiteheader">
+            align-items-center" id="whiteheader">
                 Task Planner
-                <svg role="button" data-bs-toggle="collapse" data-bs-target="#collapseform" aria-expanded="false" aria-controls="collapseform" id="ultrabutton" class="justify-content-end" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 133" width="128"
+                <svg type="button" data-bs-toggle="collapse" data-bs-target="#collapseform" aria-expanded="false" aria-controls="collapseform" id="ultrabutton" class="justify-content-end" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 133" width="128"
                     height="133">
                     <ellipse fill="#1e6de4" cx="64" cy="66.5" rx="64" ry="66.5" />
                     <rect fill="#fffdfd" x="26" y="61" width="73" height="13" rx="6.5" />
@@ -41,7 +40,7 @@
     </div>
     <div class="container">
         <!-- Adding a task form -->
-        <div class="row border mb-5 collapse" id="collapseform">
+        <div class="collapse row border mb-5 " id="collapseform">
             <h3 class="text-center">Add A Task</h3>
             <form>
                 <div class="mb-3">
@@ -59,11 +58,11 @@
                     </div>
                     <div class="col-6">
                         <select id="status" class="form-select" aria-label="dropdown status selection">
-                            <option selected>To Do</option>
-                            <option>In Progress</option>
-                            <option>Review</option>
-                            <option>Done</option>
-                        </select>
+                       <option selected>To Do</option>
+                       <option>In Progress</option>
+                       <option>Review</option>
+                       <option>Done</option>
+                       </select>
                         <span id="errMsgSelect"></span>
                     </div>
                 </div>
@@ -71,7 +70,9 @@
                     <textarea class="form-control" id="description" placeholder="Task Description"></textarea>
                     <span id="errMsgDes" style="color: red"></span>
                 </div>
-                <button id="btnSub" type="button" class="btn btn-primary">Add Task</button>
+                <button id="btnSub" type="button" class="btn btn-primary">
+                    Add Task
+                </button>
             </form>
         </div>
 
@@ -93,8 +94,12 @@
                             <li class="list-group-item">Status</li>
                             </ul>
                             <div class="card-body">
-                        <button type="button " class="btn $btn-border-width:0 btn-success btn-sm">Done</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <button type="button " class="btn $btn-border-width:0 btn-success btn-sm">
+                            Done
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm">
+                            Delete
+                        </button>
                     </div>
                 </li>
                 </ul> -->
