@@ -1,7 +1,7 @@
 // create html
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
     const html = `
-    <ul class="list-group" data-id-number="${id}">
+    <ul class="list-group col" data-id-number="${id}">
         <li class="card mb-2" style="width: 100%">
             <div class="card-body">
                <h5 class="card-title">${name}</h5>
@@ -9,7 +9,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             <ul class="list-group list-group-flush">
                   <li class="list-group-item">${assignedTo}</li>
                   <li class="list-group-item">${dueDate}</li>
-                  <li id="htmlStatus" class="list-group-item">${status}</li>
+                  <li class="list-group-item">${status}</li>
                   <li class="list-group-item">${description}</li>
             </ul>
             <div class="card-body">
@@ -72,39 +72,39 @@ class TaskManager {
 
     //this method finds the id
     getTaskById(taskId) {
-            let foundTask;
-            for (let i = 0; i < this.tasks.length; i++) {
-                let getTask = this.tasks[i];
-                if (getTask.id === taskId) {
-                    foundTask = getTask;
-                }
+        let foundTask;
+        for (let i = 0; i < this.tasks.length; i++) {
+            let getTask = this.tasks[i];
+            if (getTask.id === taskId) {
+                foundTask = getTask;
             }
-            return foundTask;
         }
+        return foundTask;
+    }
 
     //delete method
     deleteTask(taskId) {
-        const newTasks = [];
-        for(let i=0; i < this.tasks.length; i++) {
-            const task = this.tasks[i];
-            if(task.id !== taskId) {
-                newTasks.push(task);
+            const newTasks = [];
+            for (let i = 0; i < this.tasks.length; i++) {
+                const task = this.tasks[i];
+                if (task.id !== taskId) {
+                    newTasks.push(task);
+                }
             }
+            this.tasks = newTasks;
         }
-        this.tasks = newTasks;
-    }
         //   For local storage
     save() {
-        // create a json stringfy 
-        const taskJson = JSON.stringify(this.tasks);
-        // store json in local Storage
-        localStorage.setItem('task', taskJson);
-        // convert id into string
-        const currentId = String(this.currentId);
-        // store Id in localstorage
-        localStorage.setItem('currentId', currentId);
-    }
-    //This method loads the saved data
+            // create a json stringfy 
+            const taskJson = JSON.stringify(this.tasks);
+            // store json in local Storage
+            localStorage.setItem('task', taskJson);
+            // convert id into string
+            const currentId = String(this.currentId);
+            // store Id in localstorage
+            localStorage.setItem('currentId', currentId);
+        }
+        //This method loads the saved data
     load() {
         if (localStorage.getItem('task')) {
             //to get the task from local storage
