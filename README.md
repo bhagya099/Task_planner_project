@@ -14,6 +14,4 @@ Bonus Features we want:
 > tasks are displayed in order of due date <br>
 > tasks are visible on a calendar <br>
 > tasks have a priority button that will !important them to the top of the display order <br>
-> use .trim to stop whitespaces on our form input fields <br>
-> update card graphics and design <br>
-> 
+> update card graphics and design <br> 

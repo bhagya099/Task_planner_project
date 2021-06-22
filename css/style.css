@@ -119,26 +119,39 @@ form {
 /* card visuals */
 
 .card {
+    min-width: 300px !important;
+    max-width: 300px !important;
     border-radius: 40px !important;
     border: none !important;
 }
 
 .card-wrapping {
-    min-width: 300px;
+    min-width: 300px !important;
     max-width: 300px !important;
-    /* margin: auto; */
+    margin: 5px 10px !important;
 }
 
-.green {
-    color: #109310 !important;
+
+
+/* colour Status */
+.done {
+    color: white !important;
+    background: url('../images/done.png');
 }
 
-.orange {
-    color: #d89c2a !important;
+.in-progress {
+    color: white !important;
+    background-image: url('../images/in-progress.png');
 }
 
-.blue {
-    color: #3535e6 !important;
+.review {
+    color: white !important;
+    background-image: url('../images/review.png');
+}
+
+.to-do {
+    color: white !important;
+    background-image: url('../images/to-do-2.png');
 }
 
 
