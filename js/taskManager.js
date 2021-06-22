@@ -16,8 +16,8 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                 <button type="button" class="btn $btn-border-width:0 btn-success btn-sm done-button ${status.toLowerCase() == 'done' ? 'd-none' : ''}">
                  Done
                 </button>
-                <button type="button" class="btn btn-danger btn-sm">
-                   Delete
+                <button type="button" class="btn btn-danger btn-sm delete-button">
+                    Delete
                 </button>
             </div>
         </li>
@@ -80,6 +80,18 @@ class TaskManager {
             }
             return foundTask;
         }
+
+    //delete method
+    deleteTask(taskId) {
+        const newTasks = [];
+        for(let i=0; i < newTasks.length; i++) {
+            const task = this.tasks[i];
+            if(task.id !== taskId) {
+                newTasks.push(task);
+            }
+        }
+        this.tasks = newTasks;
+    }
         //   For local storage
     save() {
         // create a json stringfy 
