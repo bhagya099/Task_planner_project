@@ -10,6 +10,7 @@ const dateInput = document.querySelector("#date");
 const statusInput = document.querySelector("#status");
 const description = document.querySelector("#description");
 const submitButton = document.querySelector("#btnSub");
+// const deleteButton = document.querySelector(".delete-button");
 const displayTask = document.querySelector("#displayTask");
 
 let err1 = false;
@@ -128,12 +129,23 @@ checkFormInput = (event) => {
 submitButton.addEventListener("click", checkFormInput);
 //the event listener for clicking on 'done' button on a task
 displayTask.addEventListener("click", (event) => {
-  if (event.target.classList.contains("done-button")) {
-    //find the main parent element of the 'done' button
-    let parentTask = event.target.parentElement.parentElement.parentElement;
-    let taskId = Number(parentTask.dataset.idNumber);
-    const task = NewTask.getTaskById(taskId);
-    task.task.status = "Done";
-    NewTask.render();
-  }
+    if (event.target.classList.contains("done-button")) {
+        //find the main parent element of the 'done' button
+        let parentTask = event.target.parentElement.parentElement.parentElement;
+        let taskId = Number(parentTask.dataset.idNumber);
+        const task = NewTask.getTaskById(taskId);
+        task.task.status = "Done";
+        NewTask.render();
+    }
+    //event listener for deleting task
+    if (event.target.classList.contains("delete-button")) {
+        let parentTask = event.target.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+        let taskId = Number(parentTask.dataset.idNumber);
+        NewTask.deleteTask(taskId);
+        NewTask.save();
+        NewTask.render(); 
+        console.log("I am clicking");
+    }
 });
+
