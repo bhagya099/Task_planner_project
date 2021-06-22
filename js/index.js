@@ -24,81 +24,81 @@ let inputsOkay = false;
 
 //create errMessageFunction
 checkFormInput = (event) => {
-  let errMessageName = document.querySelector("#errMsgName");
-  let errMessageAssign = document.querySelector("#errMsgAssign");
-  let errMessageDate = document.querySelector("#errMsgDate");
-  let errMessageDes = document.querySelector("#errMsgDes");
+    let errMessageName = document.querySelector("#errMsgName");
+    let errMessageAssign = document.querySelector("#errMsgAssign");
+    let errMessageDate = document.querySelector("#errMsgDate");
+    let errMessageDes = document.querySelector("#errMsgDes");
 
     event.preventDefault();
 
-  // input valid task name
-  let nameInputValue = nameInput.value.trim();
+    // input valid task name
+    let nameInputValue = nameInput.value.trim();
 
-  if (nameInputValue.length < 5 || nameInputValue == "") {
-    errMessageName.innerHTML =
-      "*Please enter a task name more than 5 characters";
-    nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
-    err1 = true;
-  } else if (nameInputValue.length === 0) {
-    nameInput.placeholder = "*Please enter a task name";
-    nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
-    err1 = true;
-  } else {
-    errMessageName.innerHTML = "";
-    nameInput.setAttribute("style", "border: none !important;");
-    err1 = false;
-  }
+    if (nameInputValue.length < 5 || nameInputValue == "") {
+        errMessageName.innerHTML =
+            "*Please enter a task name more than 5 characters";
+        nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
+        err1 = true;
+    } else if (nameInputValue.length === 0) {
+        nameInput.placeholder = "*Please enter a task name";
+        nameInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
+        err1 = true;
+    } else {
+        errMessageName.innerHTML = "";
+        nameInput.setAttribute("style", "border: none !important;");
+        err1 = false;
+    }
 
-  // input valid assign
-  let assignedInputValue = assignedInput.value.trim();
-  if (assignedInputValue.length < 3 || assignedInputValue.length == "") {
-    errMessageAssign.innerHTML = "*Please enter a name  more than 3 characters";
-    assignedInput.setAttribute(
-      "style",
-      "border: #EC3A0E solid 3px !important;"
-    );
-    err2 = true;
-  } else if (assignedInputValue.length === 0) {
-    assignedInput.placeholder = "*Please assign a name";
-    assignedInput.setAttribute(
-      "style",
-      "border: #EC3A0E solid 3px !important;"
-    );
-    err2 = true;
-  } else {
-    errMessageAssign.innerHTML = "";
-    assignedInput.setAttribute("style", "border: none !important;");
-    err2 = false;
-  }
+    // input valid assign
+    let assignedInputValue = assignedInput.value.trim();
+    if (assignedInputValue.length < 3 || assignedInputValue.length == "") {
+        errMessageAssign.innerHTML = "*Please enter a name  more than 3 characters";
+        assignedInput.setAttribute(
+            "style",
+            "border: #EC3A0E solid 3px !important;"
+        );
+        err2 = true;
+    } else if (assignedInputValue.length === 0) {
+        assignedInput.placeholder = "*Please assign a name";
+        assignedInput.setAttribute(
+            "style",
+            "border: #EC3A0E solid 3px !important;"
+        );
+        err2 = true;
+    } else {
+        errMessageAssign.innerHTML = "";
+        assignedInput.setAttribute("style", "border: none !important;");
+        err2 = false;
+    }
 
-  // input valid description
-  let descriptionValue = description.value.trim();
-  if (descriptionValue.length < 5 || descriptionValue.length == "") {
-    errMessageDes.innerHTML =
-      "*Please add a description more than 5 characters";
-    description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
-    err3 = true;
-  } else if (descriptionValue.length == 0) {
-    description.placeholder =
-      "*Please add a description more than 5 characters";
-    description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
-    err3 = true;
-  } else {
-    errMessageDes.innerHTML = "";
-    description.setAttribute("style", "border: none !important;");
-    err3 = false;
-  }
+    // input valid description
+    let descriptionValue = description.value.trim();
+    if (descriptionValue.length < 5 || descriptionValue.length == "") {
+        errMessageDes.innerHTML =
+            "*Please add a description more than 5 characters";
+        description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
+        err3 = true;
+    } else if (descriptionValue.length == 0) {
+        description.placeholder =
+            "*Please add a description more than 5 characters";
+        description.setAttribute("style", "border: #EC3A0E solid 3px !important;");
+        err3 = true;
+    } else {
+        errMessageDes.innerHTML = "";
+        description.setAttribute("style", "border: none !important;");
+        err3 = false;
+    }
 
-  // select the date
-  if (dateInput.value) {
-    errMessageDate.innerHTML = "";
-    dateInput.setAttribute("style", "border: none !important;");
-    err4 = false;
-  } else {
-    errMessageDate.innerHTML = "*Please select the date";
-    dateInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
-    err4 = true;
-  }
+    // select the date
+    if (dateInput.value) {
+        errMessageDate.innerHTML = "";
+        dateInput.setAttribute("style", "border: none !important;");
+        err4 = false;
+    } else {
+        errMessageDate.innerHTML = "*Please select the date";
+        dateInput.setAttribute("style", "border: #EC3A0E solid 3px !important;");
+        err4 = true;
+    }
 
     //ensuring all inputs are error free
     if (err1 || err2 || err3 || err4) {
@@ -116,21 +116,21 @@ checkFormInput = (event) => {
         statusInput.value = "To Do";
     };
 
-  //calling the addTask method
-  if (inputsOkay) {
-    NewTask.addTask(
-      nameInput.value,
-      description.value,
-      assignedInput.value,
-      dateInput.value,
-      statusInput.value
-    );
+    //calling the addTask method
+    if (inputsOkay) {
+        NewTask.addTask(
+            nameInput.value,
+            description.value,
+            assignedInput.value,
+            dateInput.value,
+            statusInput.value
+        );
 
-    //Calling render, save and form reset
-    NewTask.render();
-    NewTask.save();
-    formReset();
-  }
+        //Calling render, save and form reset
+        NewTask.render();
+        NewTask.save();
+        formReset();
+    }
 };
 
 //Submit Form Event Listener
@@ -153,7 +153,6 @@ displayTask.addEventListener("click", (event) => {
         let taskId = Number(parentTask.dataset.idNumber);
         NewTask.deleteTask(taskId);
         NewTask.save();
-        NewTask.render(); 
+        NewTask.render();
     }
 });
-
