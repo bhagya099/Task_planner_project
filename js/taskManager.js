@@ -16,9 +16,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                 <button type="button" class="btn $btn-border-width:0 btn-success btn-sm done-button ${status.toLowerCase() == 'done' ? 'd-none' : ''}">
                  Done
                 </button>
-                <button type="button" class="btn btn-danger btn-sm delete-button">
-                    Delete
-                </button>
+                <button type="button" class="btn btn-danger btn-sm delete-button">Delete</button>
             </div>
         </li>
     </ul>`;
