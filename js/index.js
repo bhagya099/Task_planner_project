@@ -103,8 +103,10 @@ checkFormInput = (event) => {
     //ensuring all inputs are error free
     if (err1 || err2 || err3 || err4) {
         inputsOkay = false;
+       
     } else {
         inputsOkay = true;
+       
     }
 
     // For clear the field
@@ -115,7 +117,7 @@ checkFormInput = (event) => {
         dateInput.value = "";
         statusInput.value = "To Do";
     };
-
+    
     //calling the addTask method
     if (inputsOkay) {
         NewTask.addTask(

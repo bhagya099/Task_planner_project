@@ -1,12 +1,5 @@
 // create html
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
-    // let statusElement = document.getElementById('status');
-    // let statusColor = statusElement.value;
-    // console.log(status);
-    // console.log(statusColor);
-    // // if(${status} =='Done'){
-    // //     ${status}.style.color = 'green !important';
-    // // }
     const html = `
    <ul class="card-wrapping d-flex list-group col" data-id-number="${id}">
         <li class="card mb-2" style="width: 100%">
