@@ -6,7 +6,6 @@
 
 
 /* Header visuals */
-
 #headercard {
     margin: 0;
     padding: 0;
@@ -37,23 +36,41 @@
 
 
 /* Background Image Set up */
-
 body {
     background-image: url('../images/coolabstract.png');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 
+/* Add Task Message */
+#firstTaskDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 60px 0px 0px;
+}
+
+#firstTask {
+    max-width: 580px;
+    max-height: auto;
+}
+
+@media only screen and (max-width: 780px) {
+    #firstTask {
+        max-width: 75%;
+        max-height: auto;
+        min-width: 290px;
+        min-height: auto;
+    }
+}
 
 /* formating ALL buttons */
-
 .btn {
     border-radius: 40px !important;
 }
 
 
 /* 'done' buttons */
-
 .btn-success {
     background-color: #86ce64 !important;
     border: none !important;
@@ -64,7 +81,6 @@ body {
 
 
 /* 'delete' buttons */
-
 .btn-danger {
     border: none !important;
     background-color: rgb(236, 58, 14) !important;
@@ -74,7 +90,6 @@ body {
 
 
 /* 'Add a Task' visuals */
-
 #collapseform {
     background-color: #FFFFFF90 !important;
     border-radius: 40px;
@@ -117,7 +132,6 @@ form {
 
 
 /* card visuals */
-
 .card {
     min-width: 300px !important;
     max-width: 300px !important;
@@ -156,7 +170,6 @@ form {
 
 
 /* Card column */
-
 @media only screen and (max-width: 700px) {
     #displayTask {
         justify-content: center;

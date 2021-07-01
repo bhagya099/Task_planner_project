@@ -72,7 +72,6 @@ class TaskManager {
                 renderTask.status
             );
             tasksHtmlList.unshift(taskHtml);
-
         }
 
         const taskHtml = tasksHtmlList.join("\n");
@@ -103,6 +102,7 @@ class TaskManager {
             }
             this.tasks = newTasks;
         }
+
         //   For local storage
     save() {
             // create a json stringfy 
@@ -114,6 +114,7 @@ class TaskManager {
             // store Id in localstorage
             localStorage.setItem('currentId', currentId);
         }
+
         //This method loads the saved data
     load() {
         if (localStorage.getItem('task')) {
