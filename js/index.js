@@ -13,6 +13,7 @@ const statusInput = document.querySelector("#status");
 const description = document.querySelector("#description");
 const submitButton = document.querySelector("#btnSub");
 const displayTask = document.querySelector("#displayTask");
+const firstMessage = document.querySelector('#firstTaskDiv');
 
 //Error message variables
 let err1 = false;
@@ -21,6 +22,9 @@ let err3 = false;
 let err4 = false;
 
 let inputsOkay = false;
+
+//first task message toggle variable
+let tasksAdded = false;
 
 //create errMessageFunction
 checkFormInput = (event) => {
@@ -103,8 +107,10 @@ checkFormInput = (event) => {
     //ensuring all inputs are error free
     if (err1 || err2 || err3 || err4) {
         inputsOkay = false;
+       
     } else {
         inputsOkay = true;
+       
     }
 
     // For clear the field
@@ -115,7 +121,7 @@ checkFormInput = (event) => {
         dateInput.value = "";
         statusInput.value = "To Do";
     };
-
+    
     //calling the addTask method
     if (inputsOkay) {
         NewTask.addTask(
@@ -133,14 +139,24 @@ checkFormInput = (event) => {
     }
 };
 
+//toggles the form open and shut
 function toggle() {
     const form = document.getElementById("collapseform");
     if (form.style.display === "none") {
-      form.style.display = "block";
+        form.style.display = "block";
+        //controls firstMessage display
+        tasksAdded = true;
+        firstMessage.style.display = "none";
     } else {
-      form.style.display = "none";
+        form.style.display = "none";
     }
-  }
+};
+
+//checking if firstMessage should display
+console.log(displayTask.innerHTML);
+if (displayTask.innerHTML != '') {
+    firstMessage.style.display = "none";
+};
 
 //Submit Form Event Listener
 submitButton.addEventListener("click", checkFormInput);
@@ -165,3 +181,5 @@ displayTask.addEventListener("click", (event) => {
         NewTask.render();
     }
 });
+
+

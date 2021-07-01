@@ -1,12 +1,5 @@
 // create html
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
-    // let statusElement = document.getElementById('status');
-    // let statusColor = statusElement.value;
-    // console.log(status);
-    // console.log(statusColor);
-    // // if(${status} =='Done'){
-    // //     ${status}.style.color = 'green !important';
-    // // }
     const html = `
    <ul class="card-wrapping d-flex list-group col" data-id-number="${id}">
         <li class="card mb-2" style="width: 100%">
@@ -72,7 +65,6 @@ class TaskManager {
                 renderTask.status
             );
             tasksHtmlList.unshift(taskHtml);
-
         }
 
         const taskHtml = tasksHtmlList.join("\n");
@@ -103,6 +95,7 @@ class TaskManager {
             }
             this.tasks = newTasks;
         }
+
         //   For local storage
     save() {
             // create a json stringfy 
@@ -114,6 +107,7 @@ class TaskManager {
             // store Id in localstorage
             localStorage.setItem('currentId', currentId);
         }
+
         //This method loads the saved data
     load() {
         if (localStorage.getItem('task')) {
