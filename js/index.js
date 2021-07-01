@@ -152,7 +152,7 @@ function toggle() {
     }
 };
 
-//checking if firstMEssage should display
+//checking if firstMessage should display
 console.log(displayTask.innerHTML);
 if (displayTask.innerHTML != '') {
     firstMessage.style.display = "none";

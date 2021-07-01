@@ -69,7 +69,6 @@ body {
     border-radius: 40px !important;
 }
 
-
 /* 'done' buttons */
 .btn-success {
     background-color: #86ce64 !important;
@@ -79,7 +78,6 @@ body {
     margin-right: 5px;
 }
 
-
 /* 'delete' buttons */
 .btn-danger {
     border: none !important;
@@ -87,7 +85,6 @@ body {
     height: 40px;
     width: 60px;
 }
-
 
 /* 'Add a Task' visuals */
 #collapseform {
@@ -130,7 +127,6 @@ form {
     border: none !important;
 }
 
-
 /* card visuals */
 .card {
     min-width: 300px !important;
@@ -144,8 +140,6 @@ form {
     max-width: 300px !important;
     margin: 5px 10px !important;
 }
-
-
 
 /* colour Status */
 .done {
@@ -167,7 +161,6 @@ form {
     color: white !important;
     background-image: url('../images/to-do-2.png');
 }
-
 
 /* Card column */
 @media only screen and (max-width: 700px) {
