@@ -106,7 +106,7 @@ checkFormInput = (event) => {
        
     } else {
         inputsOkay = true;
-        toggle();
+       
     }
 
     // For clear the field
